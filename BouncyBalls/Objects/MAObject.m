@@ -7,6 +7,7 @@
 //
 
 #import "MAObject.h"
+#import "MAUtils.h"
 
 @implementation MAObject
 
@@ -19,15 +20,13 @@
                              @"\n\t frame: (%0.2f,%0.2f %0.2f,%02.f)"
                              @"\n\t center: %0.2f,%0.2f"
                              @"\n\t delta:  %0.2f,%0.2f"
-                             @"\n\t velocity: %0.2f,%0.2f"
-                             @"\n\t color: %@",
+                             @"\n\t velocity: %0.2f,%0.2f",
                              NSStringFromClass([self class]),
                              (self.shape == circle) ? @"circle" : @"square",
                              self.frame.origin.x,self.frame.origin.y,self.frame.size.width,self.frame.size.height,
                              self.center.x, self.center.y,
                              self.deltaPosition.x, self.deltaPosition.y,
-                             self.velocity.x, self.velocity.y,
-                             self.color];
+                              self.velocity.x, self.velocity.y];
     
     return desc;
 }
@@ -39,6 +38,7 @@
     if ( self = [super init] ) {
         self.frame = theFrame;
         self.shape = theShape;
+        self.center = MAGetCenter(self.frame);
         [self setPathForShape];
         [self setDefaultColor];
         [self setDefaultVelocity];
@@ -60,6 +60,8 @@
     [self updatePathLocation];
     
 }
+
+
 
 
 
@@ -87,14 +89,22 @@
 
 - (void)setDefaultColor {
     
-    // Just a default color
+    // Just a default color    
     self.color = [[UIColor redColor] CGColor];
 }
 
 - (void)setDefaultVelocity {
+    
+    int anX = arc4random()%1500;
+    int anY = arc4random()%1500;
+    
+    float x = anX * 0.0001;
+    float y = anY * 0.0001;
+    
+    
     MAVector newVelocity;
-    newVelocity.x = 0.015;
-    newVelocity.y = 0.011;
+    newVelocity.x = x;//0.110;
+    newVelocity.y = y;//0.125;
     self.velocity = newVelocity;
     
 }

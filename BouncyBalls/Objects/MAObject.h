@@ -11,7 +11,7 @@
 #import "Enums.h"
 
 
-#define RECT20 CGRectMake(0,0, 180,180)
+#define RECT20 CGRectMake(150,150, 20,20)
 
 @interface MAObject : NSObject
 

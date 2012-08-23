@@ -16,9 +16,7 @@
     
 static CADisplayLink *dlink = nil;
 static MADrawing *controlPoint = nil;
-static int r = 0;
-static int g = 50;
-static int b = 75;
+
 
 @implementation MADrawing
 
@@ -99,9 +97,10 @@ void NSTNLog(NSString *format,...) {
 - (void)buildObjects {
         
     // Build some objects
-    MAObject *object[5];
-    for ( int i = 0; i < 5; i++ ) {
-        object[i] = [[MAObject alloc] initWithShape:circle frame:RECT20];
+    MAObject *object[25];
+    for ( int i = 0; i < 25; i++ ) {
+        CGRect frameRect = CGRectMake((i+1)*30, (i+1)*36, 20, 20);
+        object[i] = [[MAObject alloc] initWithShape:circle frame:frameRect];
         [controlPoint.objectManager addObject:object[i]];
     }
     
@@ -115,9 +114,11 @@ void NSTNLog(NSString *format,...) {
     // Update framerate
     self.framerate = 1/dlink.duration;
     
-    
+
     for (MAObject *object in self.objectManager) {
     
+        [self checkScreenCollisions:object];
+        
         // Calcuate next integration
         CGPoint nextPosition;
         nextPosition.x = object.center.x + object.velocity.x * self.framerate;
@@ -130,15 +131,44 @@ void NSTNLog(NSString *format,...) {
         deltaPosition.y = nextPosition.y - object.center.y;
         object.deltaPosition = deltaPosition;
         [object updateCenter:nextPosition];
-                
-        NSTNLog(@"Object: %@", object);
-
-        
 
     }
     
     [[MACanvas mainCanvas] setNeedsDisplay];
+        
+}
+
+
+- (void)checkScreenCollisions: (MAObject *)object {
     
+        if (object.center.x < -1 && object.velocity.x < 0)
+        {
+            MAVector newVelocity = object.velocity;
+            newVelocity.x = -newVelocity.x;
+            object.velocity = newVelocity;
+        }
+        
+        if (object.center.y > 1024 && object.velocity.y > 0)
+        {
+            MAVector newVelocity = object.velocity;
+            newVelocity.y = -newVelocity.y;
+            object.velocity = newVelocity;
+        }
+        
+        if (object.center.x > 768 && object.velocity.x > 0)
+        {
+            MAVector newVelocity = object.velocity;
+            newVelocity.x = -newVelocity.x;
+            object.velocity = newVelocity;
+        }
+        
+        if (object.center.y < -1 && object.velocity.y < 0)
+        {
+            MAVector newVelocity = object.velocity;
+            newVelocity.y = -newVelocity.y;
+            object.velocity = newVelocity;
+        }
+
 }
 
 

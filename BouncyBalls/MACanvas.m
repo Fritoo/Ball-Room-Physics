@@ -88,7 +88,7 @@ static MACanvas *canvas = nil;
     
     // Get context (canvas)
     CGContextRef context = UIGraphicsGetCurrentContext();
-    
+
     // Cycle through objects
     for ( MAObject *object in [MADrawing controlPoint].objectManager ) {
     
