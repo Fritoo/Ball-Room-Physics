@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Structs.h"
 
 extern int meter;
 extern float screenRatio;
-
+extern MAVector gravity;
+extern float pixelCompensation;
 
 @interface MAConstants : NSObject
 

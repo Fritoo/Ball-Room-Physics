@@ -150,6 +150,10 @@ static MADrawing *controlPoint = nil;
 
     for (MAObject *object in self.objectManager) {
     
+        MAVector newVelocity = { object.velocity.x + gravity.x,
+                                object.velocity.y + gravity.y * self.framerate };
+        
+        object.velocity = newVelocity;
         
         #if defined(USE_PLANES) && USE_PLANES
                 [MACollisionDetector checkPlaneCollisions:object];

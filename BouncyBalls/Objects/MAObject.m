@@ -8,6 +8,7 @@
 
 #import "MAObject.h"
 #import "MAUtils.h"
+#import "MAConstants.h"
 
 @implementation MAObject
 
@@ -89,8 +90,14 @@
 
 - (void)setDefaultColor {
     
-    // Just a default color    
-    self.color = [[UIColor redColor] CGColor];
+    // Just a random color
+    int r = arc4random()%100;
+    int g = arc4random()%30;
+    int b = arc4random()%30;
+        
+    UIColor *randColor = [[UIColor alloc] initWithRed:r*0.01 green:g*0.01 blue:b*0.01 alpha:1.0];
+    self.color = [randColor CGColor];
+    CFRetain(self.color);
 }
 
 - (void)setDefaultVelocity {
@@ -98,8 +105,8 @@
     int anX = arc4random()%1500;
     int anY = arc4random()%1500;
     
-    float x = anX * 0.0001;
-    float y = anY * 0.0001;
+    float x = anX * pixelCompensation;
+    float y = anY * pixelCompensation;
     
     
     MAVector newVelocity;

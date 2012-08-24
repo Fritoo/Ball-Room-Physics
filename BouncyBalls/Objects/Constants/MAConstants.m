@@ -10,6 +10,8 @@
 
 int meter = 0;
 float screenRatio = 0;
+float pixelCompensation = 0.00001;
+MAVector gravity = { 0, 9.8*0.00001 };
 
 
 @implementation MAConstants
