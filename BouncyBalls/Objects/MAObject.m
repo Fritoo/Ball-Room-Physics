@@ -43,6 +43,8 @@
         [self setPathForShape];
         [self setDefaultColor];
         [self setDefaultVelocity];
+        [self setDefaultCOR];
+        [self setDefaultRadius];
     }
     
     return self;
@@ -61,8 +63,6 @@
     [self updatePathLocation];
     
 }
-
-
 
 
 
@@ -95,12 +95,18 @@
     int g = arc4random()%30;
     int b = arc4random()%30;
         
-    UIColor *randColor = [[UIColor alloc] initWithRed:r*0.01 green:g*0.01 blue:b*0.01 alpha:1.0];
+    UIColor *randColor = [[UIColor alloc] initWithRed:r*0.01
+                                                green:g*0.01
+                                                 blue:b*0.01
+                                                alpha:1.0];
     self.color = [randColor CGColor];
     CFRetain(self.color);
 }
 
 - (void)setDefaultVelocity {
+    
+    self.velocity = (MAVector){0,0};
+    return;
     
     int anX = arc4random()%1500;
     int anY = arc4random()%1500;
@@ -116,6 +122,21 @@
     
 }
 
+- (void)setDefaultCOR {
+    
+    // Coefficient of restitution
+    // (elasticity)
+    int randCOR = arc4random()%10;
+    self.COR = randCOR*0.1;
+    
+}
+
+- (void)setDefaultRadius {
+    
+    // Radius
+    self.radius = self.frame.size.width;
+    
+}
 
 
 

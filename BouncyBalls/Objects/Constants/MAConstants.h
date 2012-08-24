@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "Structs.h"
 
+
+#define USE_PLANES 1
+
 extern int meter;
 extern float screenRatio;
 extern MAVector gravity;

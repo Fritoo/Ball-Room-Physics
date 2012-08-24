@@ -60,14 +60,27 @@ MAVector subtractVectorByVector ( MAVector a, MAVector b ) {
     return vect;
 }
 
-
-
-MAVector addVectors ( MAVector a, MAVector b ) {
+CGPoint addVectors1 ( CGPoint a, float value ) {
     
-    MAVector vect = { a.x+b.x, a.y+b.y };
+    CGPoint vect = { a.x+value, a.y+value };
+    
+    return vect;
+
+}
+
+MAVector addVectors ( MAVector a, float value ) {
+    
+    MAVector vect = { a.x+value, a.y+value };
     
     return vect;
 }
+
+MAVector addVectorByVector ( MAVector a, MAVector b ) {
+    
+    MAVector vect = { a.x+b.x, a.y+b.y };
+    return vect;
+}
+
 
 double dot ( MAVector a, MAVector b ) {
     

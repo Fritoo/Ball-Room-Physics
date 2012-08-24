@@ -23,20 +23,21 @@
     for ( MAPlane *plane in [[MADrawing controlPoint] planesManager] ) {
         
         MAVector vect2 = {plane.plane.x, plane.plane.y};
-        double normal = dot1(vect2, object.center);
+        double normal = dot1(vect2,  addVectors1(object.center, object.radius*1.5) );
         
         float distance = normal + plane.plane.z;
         
         if (distance < 0 && dot(vect2, object.velocity) < 0 )
         {
             // collision response
-            // R = V - 2*N*(V⋅N)
+            // R = V - (1+COR)*N*(V⋅N)
+            
             
             // Calculate dot product
             float dotResult = dot(vect2, object.velocity);
             
             // 2*N
-            MAVector resultA = multiplyVectors(vect2, 2.0);
+            MAVector resultA = multiplyVectors(vect2, (1+object.COR));
             
             // ...*dotResult
             MAVector resultB = multiplyVectors(resultA, dotResult);

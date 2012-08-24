@@ -20,6 +20,10 @@
 @property CGPoint center;
 @property CGRect frame;
 
+
+// Size
+@property float radius;
+
 // Vector
 @property MAVector vector;
 @property MAVector velocity;
@@ -40,6 +44,9 @@
 // Delta
 @property CGPoint deltaPosition;
 
+
+// Coefficient of restitution
+@property float COR;
 
 
 - (id)initWithShape: (MAShape)theShape frame:(CGRect)theFrame;
