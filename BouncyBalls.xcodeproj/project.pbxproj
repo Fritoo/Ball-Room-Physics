@@ -31,6 +31,10 @@
 		7DEB554215D45A4F00699925 /* MAObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB553E15D45A4F00699925 /* MAObject.m */; };
 		7DEB554D15D4612500699925 /* MAObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB554C15D4612500699925 /* MAObjectManager.m */; };
 		7DEB554E15D4612500699925 /* MAObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB554C15D4612500699925 /* MAObjectManager.m */; };
+		7DEE11D515E6AA4500F69427 /* NSMutableArray+CArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE11D415E6AA4500F69427 /* NSMutableArray+CArray.m */; };
+		7DEE11DF15E6B03000F69427 /* MAPlane.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE11DE15E6B03000F69427 /* MAPlane.m */; };
+		7DEE11E715E7073500F69427 /* MACollisionDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE11E615E7073500F69427 /* MACollisionDetector.m */; };
+		7DEE11F115E7091400F69427 /* MAConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE11F015E7091400F69427 /* MAConstants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +79,14 @@
 		7DEB554515D45B4A00699925 /* Enums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enums.h; sourceTree = "<group>"; };
 		7DEB554B15D4612500699925 /* MAObjectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAObjectManager.h; sourceTree = "<group>"; };
 		7DEB554C15D4612500699925 /* MAObjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAObjectManager.m; sourceTree = "<group>"; };
+		7DEE11D315E6AA4500F69427 /* NSMutableArray+CArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+CArray.h"; sourceTree = "<group>"; };
+		7DEE11D415E6AA4500F69427 /* NSMutableArray+CArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+CArray.m"; sourceTree = "<group>"; };
+		7DEE11DD15E6B03000F69427 /* MAPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAPlane.h; sourceTree = "<group>"; };
+		7DEE11DE15E6B03000F69427 /* MAPlane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAPlane.m; sourceTree = "<group>"; };
+		7DEE11E515E7073500F69427 /* MACollisionDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MACollisionDetector.h; sourceTree = "<group>"; };
+		7DEE11E615E7073500F69427 /* MACollisionDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MACollisionDetector.m; sourceTree = "<group>"; };
+		7DEE11EF15E7091400F69427 /* MAConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAConstants.h; sourceTree = "<group>"; };
+		7DEE11F015E7091400F69427 /* MAConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAConstants.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,10 +166,13 @@
 				7DEB552815D4524A00699925 /* MADrawing.m */,
 				7DEB552D15D453F300699925 /* MACanvas.h */,
 				7DEB552E15D453F300699925 /* MACanvas.m */,
+				7DEE11E415E7073500F69427 /* Collisions */,
+				7DEE11D015E6AA4500F69427 /* Categories */,
 				7DEB554A15D4612500699925 /* ObjectManager */,
 				7D25618015E608730063ED91 /* Utils */,
 				7DEB554415D45B4A00699925 /* Enums */,
 				7DEB553C15D45A4F00699925 /* Objects */,
+				7DEE11E815E7075000F69427 /* Constants */,
 				7DEB553F15D45A4F00699925 /* Structs */,
 				7DEB550615D451FB00699925 /* BouncyBalls.xcdatamodeld */,
 				7DEB54FB15D451FB00699925 /* Supporting Files */,
@@ -198,6 +213,7 @@
 		7DEB553C15D45A4F00699925 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
+				7DEE11DC15E6B03000F69427 /* Planes */,
 				7DEB553D15D45A4F00699925 /* MAObject.h */,
 				7DEB553E15D45A4F00699925 /* MAObject.m */,
 			);
@@ -227,6 +243,59 @@
 				7DEB554C15D4612500699925 /* MAObjectManager.m */,
 			);
 			path = ObjectManager;
+			sourceTree = "<group>";
+		};
+		7DEE11D015E6AA4500F69427 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				7DEE11D115E6AA4500F69427 /* NSMutableArray */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		7DEE11D115E6AA4500F69427 /* NSMutableArray */ = {
+			isa = PBXGroup;
+			children = (
+				7DEE11D215E6AA4500F69427 /* C_Array */,
+			);
+			path = NSMutableArray;
+			sourceTree = "<group>";
+		};
+		7DEE11D215E6AA4500F69427 /* C_Array */ = {
+			isa = PBXGroup;
+			children = (
+				7DEE11D315E6AA4500F69427 /* NSMutableArray+CArray.h */,
+				7DEE11D415E6AA4500F69427 /* NSMutableArray+CArray.m */,
+			);
+			path = C_Array;
+			sourceTree = "<group>";
+		};
+		7DEE11DC15E6B03000F69427 /* Planes */ = {
+			isa = PBXGroup;
+			children = (
+				7DEE11DD15E6B03000F69427 /* MAPlane.h */,
+				7DEE11DE15E6B03000F69427 /* MAPlane.m */,
+			);
+			path = Planes;
+			sourceTree = "<group>";
+		};
+		7DEE11E415E7073500F69427 /* Collisions */ = {
+			isa = PBXGroup;
+			children = (
+				7DEE11E515E7073500F69427 /* MACollisionDetector.h */,
+				7DEE11E615E7073500F69427 /* MACollisionDetector.m */,
+			);
+			path = Collisions;
+			sourceTree = "<group>";
+		};
+		7DEE11E815E7075000F69427 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				7DEE11EF15E7091400F69427 /* MAConstants.h */,
+				7DEE11F015E7091400F69427 /* MAConstants.m */,
+			);
+			name = Constants;
+			path = Objects/Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,6 +413,10 @@
 				7DEB554115D45A4F00699925 /* MAObject.m in Sources */,
 				7DEB554D15D4612500699925 /* MAObjectManager.m in Sources */,
 				7D25618315E608730063ED91 /* MAUtils.m in Sources */,
+				7DEE11D515E6AA4500F69427 /* NSMutableArray+CArray.m in Sources */,
+				7DEE11DF15E6B03000F69427 /* MAPlane.m in Sources */,
+				7DEE11E715E7073500F69427 /* MACollisionDetector.m in Sources */,
+				7DEE11F115E7091400F69427 /* MAConstants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

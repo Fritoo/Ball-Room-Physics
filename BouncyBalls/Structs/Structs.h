@@ -13,3 +13,11 @@ typedef struct MAVector {
     
 } MAVector;
 
+typedef struct MAVector3 {
+    
+    float x;
+    float y;
+    float z;
+    
+} MAVector3;
+
