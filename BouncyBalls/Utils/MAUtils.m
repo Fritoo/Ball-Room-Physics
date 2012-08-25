@@ -36,6 +36,19 @@ CGPoint MAGetCenter (CGRect rect) {
     
 }
 
+MAVector divideVectors ( MAVector a, float factor ) {
+    
+    MAVector vect = { a.x/factor, a.y/factor };
+    return vect;
+}
+
+MAVector divideVectorByVector ( MAVector a, MAVector b ) {
+    
+    MAVector vect = { a.x/b.x, a.y/b.y };
+    return vect;
+}
+
+
 MAVector multiplyVectorByVector ( MAVector a, MAVector b ) {
     
     MAVector vect = { a.x*b.x, a.y*b.y };

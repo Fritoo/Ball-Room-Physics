@@ -31,25 +31,31 @@ CMMotionManager *motionManager = nil;
     
     MAVector gravVector;
     if ( success ) {
-        CMAcceleration gravAccel = [MAConstants realGravity];
-        gravVector = (MAVector){ gravAccel.x, gravAccel.y };
+        gravVector = [MAConstants realGravity];
     } else {
         gravVector = (MAVector){ 0, 9.8/meter*0.01 };
     }
     
     gravity =  gravVector;
+    MALog(@"gravVector: %0.2f,%0.2f", gravity.x, gravity.y);
     
 }
 
 + (BOOL)startRealGravityMonitoring {
     
     motionManager = [[CMMotionManager alloc] init];
-    if ( [motionManager isDeviceMotionAvailable] ) {
+    if ( ![motionManager isDeviceMotionAvailable] || !motionManager ) {
         return 0;
     }
     
     MALog(@"Starting device motion updates");
-    [motionManager startDeviceMotionUpdates];
+    [motionManager setDeviceMotionUpdateInterval:2/60];
+    [motionManager startDeviceMotionUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMDeviceMotion *motion, NSError *e) {
+        
+        gravity = [MAConstants realGravity];
+        
+    }];
+    
     return 1;
     
 }
@@ -64,14 +70,20 @@ CMMotionManager *motionManager = nil;
     
 }
 
-+ (CMAcceleration)realGravity {
++ (MAVector)realGravity {
     
     if ( !motionManager ) {
-        return (CMAcceleration){0,0,0};
+        return (MAVector){0,0};
     }
     
-    return [[motionManager deviceMotion] gravity];
-    
+    CMAcceleration grav = [[motionManager deviceMotion] gravity];
+    MAVector result = (MAVector) { grav.x, grav.y };
+    result = multiplyVectors(result, -1);
+    result = divideVectors(result, meter);
+    result = multiplyVectors(result, 0.01);
+
+    MALog(@"gravity update: %f, %f", result.x, result.y);
+    return result;
 }
 
 

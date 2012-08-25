@@ -25,7 +25,7 @@ extern CMMotionManager *motionManager;
 
 
 + (void)generateConfig;
-+ (CMAcceleration)realGravity;
++ (MAVector)realGravity;
 + (void)stopRealGravityMonitoring;
 
 

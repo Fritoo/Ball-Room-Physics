@@ -9,6 +9,7 @@
 #import "MAAppDelegate.h"
 
 #import "MADrawing.h"
+#import "Static View Controller/MAStaticRootViewCon.h"
 
 @implementation MAAppDelegate
 
@@ -21,7 +22,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
-    self.window.rootViewController = [[UIViewController alloc] init];
+    self.window.rootViewController = [[MAStaticRootViewCon alloc] init];
     self.window.rootViewController.view.backgroundColor = [UIColor whiteColor];
 
     [self.window makeKeyAndVisible];

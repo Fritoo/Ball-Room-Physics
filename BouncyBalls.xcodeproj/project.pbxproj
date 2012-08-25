@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		62DD0B6215E9276000DE2900 /* Static View Controller in Resources */ = {isa = PBXBuildFile; fileRef = 62DD0B6115E9276000DE2900 /* Static View Controller */; };
 		7D25618315E608730063ED91 /* MAUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D25618215E608730063ED91 /* MAUtils.m */; };
 		7DDC9B5715E8487600616693 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DDC9B5615E8487600616693 /* CoreMotion.framework */; };
 		7DEB54F315D451FB00699925 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DEB54F215D451FB00699925 /* UIKit.framework */; };
@@ -57,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		62DD0B6115E9276000DE2900 /* Static View Controller */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Static View Controller"; sourceTree = "<group>"; };
 		7D25618115E608730063ED91 /* MAUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAUtils.h; sourceTree = "<group>"; };
 		7D25618215E608730063ED91 /* MAUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAUtils.m; sourceTree = "<group>"; };
 		7DDC9B5615E8487600616693 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
@@ -194,6 +196,7 @@
 		7DEB54FA15D451FB00699925 /* BouncyBalls */ = {
 			isa = PBXGroup;
 			children = (
+				62DD0B6115E9276000DE2900 /* Static View Controller */,
 				7DEB550315D451FB00699925 /* MAAppDelegate.h */,
 				7DEB550415D451FB00699925 /* MAAppDelegate.m */,
 				7DEB552715D4524A00699925 /* MADrawing.h */,
@@ -407,6 +410,7 @@
 			files = (
 				7DEB54FF15D451FB00699925 /* InfoPlist.strings in Resources */,
 				7DF7752415E83E4700D4DFBD /* Contacts in Resources */,
+				62DD0B6215E9276000DE2900 /* Static View Controller in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
