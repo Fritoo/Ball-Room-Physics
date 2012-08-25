@@ -21,3 +21,12 @@ typedef struct MAVector3 {
     
 } MAVector3;
 
+//typedef struct MAContact {
+    //distance
+    //normal
+    //a
+    //b
+    //valocity
+    //inverseMass
+    //impulse
+//}

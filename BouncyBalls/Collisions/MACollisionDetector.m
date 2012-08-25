@@ -36,7 +36,7 @@
             // Calculate dot product
             float dotResult = dot(vect2, object.velocity);
             
-            // 2*N
+            // 2*N 
             MAVector resultA = multiplyVectors(vect2, (1+object.COR));
             
             // ...*dotResult

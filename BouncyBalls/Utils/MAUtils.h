@@ -22,6 +22,6 @@ CGPoint  addVectors1 ( CGPoint a, float value );
 MAVector addVectorByVector ( MAVector a, MAVector b );
 double dot ( MAVector a, MAVector b );
 double dot1 ( MAVector a, CGPoint b );
-void NSTNLog(NSString *format,...);
+void MALog(NSString *format,...);
 
 @end

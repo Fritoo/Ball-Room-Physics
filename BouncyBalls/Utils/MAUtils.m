@@ -11,7 +11,7 @@
 @implementation MAUtils
 
 
-void NSTNLog(NSString *format,...) {
+void MALog(NSString *format,...) {
     
     va_list ap;
     va_start (ap, format);

@@ -98,8 +98,8 @@ static MADrawing *controlPoint = nil;
 - (void)buildObjects {
         
     // Build some objects
-    MAObject *object[25];
-    for ( int i = 0; i < 25; i++ ) {
+    MAObject *object[NUM_OBJECTS];
+    for ( int i = 0; i < NUM_OBJECTS; i++ ) {
         CGRect frameRect = CGRectMake((i+1)*30, (i+1)*36, 20, 20);
         object[i] = [[MAObject alloc] initWithShape:circle frame:frameRect];
         [controlPoint.objectManager addObject:object[i]];
