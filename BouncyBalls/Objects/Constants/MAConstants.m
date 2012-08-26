@@ -14,6 +14,7 @@ float screenRatio = 0;
 float pixelCompensation = 0.00001;
 MAVector gravity;
 CMMotionManager *motionManager = nil;
+int usingRealGravity;
 
 @implementation MAConstants
 
@@ -24,9 +25,21 @@ CMMotionManager *motionManager = nil;
     float screenWidth = screenSize.width;
     float screenHeight = screenSize.height;
     meter = screenWidth;
+    
+    LogInfo(@"\r\nmeter: %d\n"
+             "screenWidth: %f\n"
+             "screenSize: %f,%f\n"
+             "bounds: %@\n",
+             meter,
+             screenWidth,
+             screenSize.width,
+             screenSize.height,
+             NSStringFromCGRect([[UIScreen mainScreen] bounds]));
+    
     screenRatio = screenHeight/screenWidth;
     
     int success = [self startRealGravityMonitoring];
+    usingRealGravity = success;
     MALog(@"Real gravity monitoring enabled. Success=%d", success);
     
     MAVector gravVector;
@@ -37,16 +50,21 @@ CMMotionManager *motionManager = nil;
     }
     
     gravity =  gravVector;
-    MALog(@"gravVector: %0.2f,%0.2f", gravity.x, gravity.y);
+    LogInfo(@"gravVector: %0.2f,%0.2f", gravity.x, gravity.y);
     
 }
 
 + (BOOL)startRealGravityMonitoring {
-    
+
+#if defined(GRAVITY_ENABLED) && GRAVITY_ENABLED
     motionManager = [[CMMotionManager alloc] init];
     if ( ![motionManager isDeviceMotionAvailable] || !motionManager ) {
         return 0;
     }
+#else
+    return 0;
+#endif
+    
     
     MALog(@"Starting device motion updates");
     [motionManager setDeviceMotionUpdateInterval:2/60];
@@ -77,8 +95,8 @@ CMMotionManager *motionManager = nil;
     }
     
     CMAcceleration grav = [[motionManager deviceMotion] gravity];
-    MAVector result = (MAVector) { grav.x, grav.y };
-    result = multiplyVectors(result, -1);
+    MAVector result = (MAVector) { grav.x, grav.y * -1 };
+//    result = multiplyVectors(result, -1);
     result = divideVectors(result, meter);
     result = multiplyVectors(result, 0.01);
 

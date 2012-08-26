@@ -90,7 +90,7 @@ static MACanvas *canvas = nil;
     CGContextRef context = UIGraphicsGetCurrentContext();
 
     // Cycle through objects
-    for ( MAObject *object in [MADrawing controlPoint].objectManager ) {
+    for ( MAObject *object in [MAObjectManager objectStore] ) {
     
         // Draw
         CGContextAddPath(context, object.path);

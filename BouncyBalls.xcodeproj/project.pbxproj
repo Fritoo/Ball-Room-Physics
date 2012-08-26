@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		62DD0B6215E9276000DE2900 /* Static View Controller in Resources */ = {isa = PBXBuildFile; fileRef = 62DD0B6115E9276000DE2900 /* Static View Controller */; };
+		6291EDAC15E948160090BC23 /* MAStaticRootViewCon.m in Sources */ = {isa = PBXBuildFile; fileRef = 6291EDAB15E948160090BC23 /* MAStaticRootViewCon.m */; };
 		7D25618315E608730063ED91 /* MAUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D25618215E608730063ED91 /* MAUtils.m */; };
 		7DDC9B5715E8487600616693 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DDC9B5615E8487600616693 /* CoreMotion.framework */; };
 		7DEB54F315D451FB00699925 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DEB54F215D451FB00699925 /* UIKit.framework */; };
@@ -37,13 +37,6 @@
 		7DEE11DF15E6B03000F69427 /* MAPlane.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE11DE15E6B03000F69427 /* MAPlane.m */; };
 		7DEE11E715E7073500F69427 /* MACollisionDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE11E615E7073500F69427 /* MACollisionDetector.m */; };
 		7DEE11F115E7091400F69427 /* MAConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE11F015E7091400F69427 /* MAConstants.m */; };
-		7DF774BF15E7FCFB00D4DFBD /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DF774BE15E7FCFB00D4DFBD /* CFNetwork.framework */; };
-		7DF774C115E7FD0200D4DFBD /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DF774C015E7FD0200D4DFBD /* CoreTelephony.framework */; };
-		7DF774C315E7FD0C00D4DFBD /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DF774C215E7FD0C00D4DFBD /* MediaPlayer.framework */; };
-		7DF774C515E7FD1A00D4DFBD /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DF774C415E7FD1A00D4DFBD /* CoreMedia.framework */; };
-		7DF774C715E7FD2400D4DFBD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DF774C615E7FD2400D4DFBD /* libz.dylib */; };
-		7DF774C915E7FD2B00D4DFBD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DF774C815E7FD2B00D4DFBD /* SystemConfiguration.framework */; };
-		7DF774CB15E7FD3100D4DFBD /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DF774CA15E7FD3100D4DFBD /* MobileCoreServices.framework */; };
 		7DF7752415E83E4700D4DFBD /* Contacts in Resources */ = {isa = PBXBuildFile; fileRef = 7DF7752315E83E4700D4DFBD /* Contacts */; };
 /* End PBXBuildFile section */
 
@@ -58,7 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		62DD0B6115E9276000DE2900 /* Static View Controller */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Static View Controller"; sourceTree = "<group>"; };
+		6291EDAA15E948160090BC23 /* MAStaticRootViewCon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAStaticRootViewCon.h; sourceTree = "<group>"; };
+		6291EDAB15E948160090BC23 /* MAStaticRootViewCon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAStaticRootViewCon.m; sourceTree = "<group>"; };
 		7D25618115E608730063ED91 /* MAUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAUtils.h; sourceTree = "<group>"; };
 		7D25618215E608730063ED91 /* MAUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAUtils.m; sourceTree = "<group>"; };
 		7DDC9B5615E8487600616693 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
@@ -99,13 +93,6 @@
 		7DEE11E615E7073500F69427 /* MACollisionDetector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MACollisionDetector.m; sourceTree = "<group>"; };
 		7DEE11EF15E7091400F69427 /* MAConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAConstants.h; sourceTree = "<group>"; };
 		7DEE11F015E7091400F69427 /* MAConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAConstants.m; sourceTree = "<group>"; };
-		7DF774BE15E7FCFB00D4DFBD /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		7DF774C015E7FD0200D4DFBD /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
-		7DF774C215E7FD0C00D4DFBD /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		7DF774C415E7FD1A00D4DFBD /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		7DF774C615E7FD2400D4DFBD /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		7DF774C815E7FD2B00D4DFBD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		7DF774CA15E7FD3100D4DFBD /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		7DF7752315E83E4700D4DFBD /* Contacts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Contacts; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,13 +102,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DDC9B5715E8487600616693 /* CoreMotion.framework in Frameworks */,
-				7DF774CB15E7FD3100D4DFBD /* MobileCoreServices.framework in Frameworks */,
-				7DF774C915E7FD2B00D4DFBD /* SystemConfiguration.framework in Frameworks */,
-				7DF774C715E7FD2400D4DFBD /* libz.dylib in Frameworks */,
-				7DF774C515E7FD1A00D4DFBD /* CoreMedia.framework in Frameworks */,
-				7DF774C315E7FD0C00D4DFBD /* MediaPlayer.framework in Frameworks */,
-				7DF774C115E7FD0200D4DFBD /* CoreTelephony.framework in Frameworks */,
-				7DF774BF15E7FCFB00D4DFBD /* CFNetwork.framework in Frameworks */,
 				7DEB552C15D453B600699925 /* QuartzCore.framework in Frameworks */,
 				7DEB54F315D451FB00699925 /* UIKit.framework in Frameworks */,
 				7DEB54F515D451FB00699925 /* Foundation.framework in Frameworks */,
@@ -144,6 +124,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6291EDA915E948160090BC23 /* Static View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6291EDAA15E948160090BC23 /* MAStaticRootViewCon.h */,
+				6291EDAB15E948160090BC23 /* MAStaticRootViewCon.m */,
+			);
+			path = "Static View Controller";
+			sourceTree = "<group>";
+		};
 		7D25618015E608730063ED91 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,13 +146,6 @@
 			isa = PBXGroup;
 			children = (
 				7DDC9B5615E8487600616693 /* CoreMotion.framework */,
-				7DF774CA15E7FD3100D4DFBD /* MobileCoreServices.framework */,
-				7DF774C815E7FD2B00D4DFBD /* SystemConfiguration.framework */,
-				7DF774C615E7FD2400D4DFBD /* libz.dylib */,
-				7DF774C415E7FD1A00D4DFBD /* CoreMedia.framework */,
-				7DF774C215E7FD0C00D4DFBD /* MediaPlayer.framework */,
-				7DF774C015E7FD0200D4DFBD /* CoreTelephony.framework */,
-				7DF774BE15E7FCFB00D4DFBD /* CFNetwork.framework */,
 				7DEB552B15D453B600699925 /* QuartzCore.framework */,
 				7DEB54FA15D451FB00699925 /* BouncyBalls */,
 				7DEB551615D451FB00699925 /* BouncyBallsTests */,
@@ -196,7 +178,7 @@
 		7DEB54FA15D451FB00699925 /* BouncyBalls */ = {
 			isa = PBXGroup;
 			children = (
-				62DD0B6115E9276000DE2900 /* Static View Controller */,
+				6291EDA915E948160090BC23 /* Static View Controller */,
 				7DEB550315D451FB00699925 /* MAAppDelegate.h */,
 				7DEB550415D451FB00699925 /* MAAppDelegate.m */,
 				7DEB552715D4524A00699925 /* MADrawing.h */,
@@ -410,7 +392,6 @@
 			files = (
 				7DEB54FF15D451FB00699925 /* InfoPlist.strings in Resources */,
 				7DF7752415E83E4700D4DFBD /* Contacts in Resources */,
-				62DD0B6215E9276000DE2900 /* Static View Controller in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +438,7 @@
 				7DEE11DF15E6B03000F69427 /* MAPlane.m in Sources */,
 				7DEE11E715E7073500F69427 /* MACollisionDetector.m in Sources */,
 				7DEE11F115E7091400F69427 /* MAConstants.m in Sources */,
+				6291EDAC15E948160090BC23 /* MAStaticRootViewCon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,6 +540,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_DYNAMIC_NO_PIC = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BouncyBalls/BouncyBalls-Prefix.pch";
@@ -565,7 +548,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../Ensighten/Release Libs/1.1.5\"",
+					"\"$(SRCROOT)",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -582,6 +565,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_DYNAMIC_NO_PIC = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BouncyBalls/BouncyBalls-Prefix.pch";
@@ -589,7 +573,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/../../Ensighten/Release Libs/1.1.5\"",
+					"\"$(SRCROOT)",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",

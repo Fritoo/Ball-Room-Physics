@@ -105,16 +105,17 @@
 
 - (void)setDefaultVelocity {
     
-    self.velocity = (MAVector){0,0};
-    return;
+    if ( usingRealGravity ) {
+        self.velocity = (MAVector){0,0};
+        return;
+    }
     
-    int anX = arc4random()%1500;
-    int anY = arc4random()%1500;
+    int anX = arc4random()%200;
+    int anY = arc4random()%200;
     
-    float x = anX * pixelCompensation;
-    float y = anY * pixelCompensation;
-    
-    
+    float x = (float)anX / meter;
+    float y = (float)anY / meter;
+        
     MAVector newVelocity;
     newVelocity.x = x;//0.110;
     newVelocity.y = y;//0.125;

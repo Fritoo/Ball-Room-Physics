@@ -9,7 +9,7 @@
 #import "MAAppDelegate.h"
 
 #import "MADrawing.h"
-#import "Static View Controller/MAStaticRootViewCon.h"
+#import "MAStaticRootViewCon.h"
 
 @implementation MAAppDelegate
 

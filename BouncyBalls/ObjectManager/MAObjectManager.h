@@ -8,7 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MAObjectManager : NSMutableArray
+@interface MAObjectManager : NSObject
 
+@property (strong) NSMutableArray *objectStore;
+
++ (MAObjectManager *)objectManager;
+- (void)buildObjects;
++ (NSMutableArray *)objectStore;
 
 @end

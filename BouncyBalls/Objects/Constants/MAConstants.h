@@ -12,14 +12,15 @@
 
 
 #define USE_PLANES 1
-#define NUM_OBJECTS 5
+#define NUM_OBJECTS 20
+#define GRAVITY_ENABLED 0
 
 extern int meter;
 extern float screenRatio;
 extern MAVector gravity;
 extern float pixelCompensation;
-extern CMMotionManager *motionManager;
-
+CMMotionManager *motionManager;
+extern int usingRealGravity;
 
 @interface MAConstants : NSObject
 

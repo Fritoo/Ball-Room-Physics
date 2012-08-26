@@ -6,14 +6,28 @@
 //  Copyright (c) 2012 MilesAlden. All rights reserved.
 //
 
+
 #import "MADrawing.h"
+
+// View
 #import "MACanvas.h"
-#import "MAObject.h"
+
+// Planes
 #import "MAPlane.h"
+
+// Objects
+#import "Objects/MAObject.h"
 #import "MAObjectManager.h"
+
+// Utils
 #import "MAUtils.h"
+
+// Constants
 #import "MAConstants.h"
+
+// Collision
 #import "MACollisionDetector.h"
+
 #import <QuartzCore/QuartzCore.h>
 
 
@@ -70,17 +84,14 @@ static MADrawing *controlPoint = nil;
     // Setup configurations
     [MAConstants generateConfig];
     
-    // Initialize manager
-    [[MADrawing controlPoint] launchObjectManager];
-    
-    // Make some objects
-    [[MADrawing controlPoint] buildObjects];
-    
     // Initialize planes manager
     [[MADrawing controlPoint] launchPlanesManager];
     
     // Make our confining planes
     [[MADrawing controlPoint] buildPlanes];
+    
+    // Initialize manager
+    [[MADrawing controlPoint] launchObjectManager];
     
     // Start drawing
     dlink = [CADisplayLink displayLinkWithTarget:controlPoint selector:@selector(update)];
@@ -92,21 +103,10 @@ static MADrawing *controlPoint = nil;
 
 
 - (void)launchObjectManager {
-    controlPoint.objectManager = [[NSMutableArray alloc] init];
-}
-
-- (void)buildObjects {
-        
-    // Build some objects
-    MAObject *object[NUM_OBJECTS];
-    for ( int i = 0; i < NUM_OBJECTS; i++ ) {
-        CGRect frameRect = CGRectMake((i+1)*30, (i+1)*36, 20, 20);
-        object[i] = [[MAObject alloc] initWithShape:circle frame:frameRect];
-        [controlPoint.objectManager addObject:object[i]];
-    }
     
+    // Launches manager and creates objects
+    controlPoint.objectManager = [MAObjectManager objectManager];
 }
-
 
 - (void)launchPlanesManager {
     
@@ -122,9 +122,9 @@ static MADrawing *controlPoint = nil;
         // in 3d space, but the normal of the plane.
         // { xDirection, yDirection, distanceToOrigin }
         (MAVector3){  1,  0, 1 },                   // Right
-        (MAVector3){  0, -1, 1*meter*screenRatio }, // Up
-        (MAVector3){ -1,  0, 1*meter },             // Left
-        (MAVector3){  0,  1, 1 },                   // Down
+        (MAVector3){  0, -1, (1*meter)*screenRatio }, // Up
+        (MAVector3){ -1,  0, (1*meter) },             // Left
+        (MAVector3){  0,  1, 1 }                       // Down
         
     };
 
@@ -148,12 +148,13 @@ static MADrawing *controlPoint = nil;
     self.framerate = 1/dlink.duration;
     
 
-    for (MAObject *object in self.objectManager) {
-    
-        MAVector newVelocity = { object.velocity.x + gravity.x,
-                                object.velocity.y + gravity.y * self.framerate };
+    for (MAObject *object in [MAObjectManager objectStore]) {
         
+#if defined(GRAVITY_ENABLED) && GRAVITY_ENABLED
+        MAVector newVelocity = { object.velocity.x + gravity.x * self.framerate,
+                                object.velocity.y + gravity.y * self.framerate };
         object.velocity = newVelocity;
+#endif
         
         #if defined(USE_PLANES) && USE_PLANES
                 [MACollisionDetector checkPlaneCollisions:object];

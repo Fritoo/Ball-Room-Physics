@@ -14,7 +14,7 @@
 
 
 @property float framerate;
-@property (strong) NSMutableArray *objectManager;
+@property (strong) MAObjectManager *objectManager;
 @property (strong) NSMutableArray *planesManager;
 
 + (void)launch;

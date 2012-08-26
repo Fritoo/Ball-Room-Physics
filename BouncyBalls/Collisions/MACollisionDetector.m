@@ -23,7 +23,7 @@
     for ( MAPlane *plane in [[MADrawing controlPoint] planesManager] ) {
         
         MAVector vect2 = {plane.plane.x, plane.plane.y};
-        double normal = dot1(vect2,  addVectors1(object.center, object.radius*1.5) );
+        double normal = dot1(vect2,  addVectors1(object.center, object.radius) );
         
         float distance = normal + plane.plane.z;
         
