@@ -19,15 +19,14 @@
 
 + (void)checkPlaneCollisions: (MAObject *)object {
     
-    
     for ( MAPlane *plane in [MAPlaneManager planeStore] ) {
         
         MAVector vect2 = {plane.plane.x, plane.plane.y};
 
-        double normal = dot1(vect2,  addVectors1(object.center, object.radius) );
+        double normal = dot1(vect2,  object.center );
         
         float distance = normal + plane.plane.z;
-        LogInfo(@"Distance: %f", distance);
+        LogInfo(@"distance: %f", distance);
         
         if (distance < 0 && dot(vect2, object.velocity) < 0 )
         {

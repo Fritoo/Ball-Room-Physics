@@ -18,6 +18,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        self.backgroundColor = [UIColor clearColor];
     }
     return self;
 }
@@ -34,7 +35,7 @@
     for ( MAPlane *plane in [MAPlaneManager planeStore] ) {
         MAVector factoredVect = { plane.plane.x*100, plane.plane.y*100 };
         CGPathMoveToPoint(path, NULL, factoredVect.x, factoredVect.y);
-        LogInfo(@"%@", [plane stringFromPlane]);
+//        LogInfo(@"%@", [plane stringFromPlane]);
         
     }
     

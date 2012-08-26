@@ -12,5 +12,6 @@
 
 
 + (MACanvas *)mainCanvas;
++ (int)launchMainCanvas;
 
 @end

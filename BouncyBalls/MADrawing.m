@@ -89,6 +89,9 @@ static MADrawing *controlPoint = nil;
     [MAConstants generateConfig];
     
     
+    // Launch main canvas
+    [MACanvas launchMainCanvas];
+    
     // Initialize planes manager
     [[MADrawing controlPoint] launchPlanesManager];
         
@@ -102,8 +105,8 @@ static MADrawing *controlPoint = nil;
     [[MADrawing controlPoint] launchControlPanel];
 
     // Start drawing
-//    dlink = [CADisplayLink displayLinkWithTarget:controlPoint selector:@selector(update)];
-//    [dlink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+    dlink = [CADisplayLink displayLinkWithTarget:controlPoint selector:@selector(update)];
+    [dlink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
     
     
 }
@@ -139,7 +142,6 @@ static MADrawing *controlPoint = nil;
     
     LogInfo(@"Drawing bounding box");
     self.planeCanvas = [[MAPlaneCanvas alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.planeCanvas.backgroundColor = [UIColor whiteColor];
     
     
     [[[UIWindow rootViewController] view] addSubview:self.planeCanvas];
@@ -196,8 +198,8 @@ static MADrawing *controlPoint = nil;
     }
     
     [[MACanvas mainCanvas] setNeedsDisplay];
-    [self.planeCanvas setNeedsDisplay];
-        
+//    [self.planeCanvas setNeedsDisplay];
+    
 }
 
 

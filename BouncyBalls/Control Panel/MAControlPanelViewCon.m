@@ -35,6 +35,8 @@
     self.lastSliderValue = self.planeSlider.value;
     self.planeSlider.maximumValue = 2.0f;
     self.planeSlider.minimumValue = -2.0f;
+    
+    self.view.userInteractionEnabled = 1;
 }
 
 

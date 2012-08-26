@@ -48,7 +48,7 @@ MAPlaneManager *planeManager = nil;
         // but these are not vector as position
         // in 3d space, but the normal of the plane.
         // { xDirection, yDirection, distanceToOrigin }
-        (MAVector3){  1,  0, 1 },                     // Right
+        (MAVector3){  1,  0, 1},                     // Right
         (MAVector3){  0, -1, (1*meter)*screenRatio }, // Up
         (MAVector3){ -1,  0, 1*meter },             // Left
         (MAVector3){  0,  1, 1 }                      // Down

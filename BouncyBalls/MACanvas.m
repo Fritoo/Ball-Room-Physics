@@ -17,17 +17,27 @@ static MACanvas *canvas = nil;
 @implementation MACanvas
 
 
+
 + (MACanvas *)mainCanvas {
     
     @synchronized(self) {
         if ( !canvas ) {
             canvas = [[MACanvas alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
             [[[UIApplication sharedApplication] delegate].window.rootViewController.view addSubview:canvas];
-            canvas.backgroundColor = [UIColor whiteColor];
+            canvas.backgroundColor = [UIColor clearColor];
         }
     }
     return canvas;
     
+}
+
++ (int)launchMainCanvas {
+    
+    if ( ![MACanvas mainCanvas] ) {
+        return 0;
+    }
+    
+    return 1;
 }
 
 

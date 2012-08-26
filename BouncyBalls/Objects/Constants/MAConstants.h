@@ -13,7 +13,11 @@
 
 #define USE_PLANES 1
 #define NUM_OBJECTS 1
-#define GRAVITY_ENABLED 0
+#define GRAVITY_ENABLED 1
+
+
+#define PI 3.14159
+#define DegreesToRadians(x) x * (PI / 180)
 
 extern int meter;
 extern float screenRatio;
