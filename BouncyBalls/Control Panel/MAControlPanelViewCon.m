@@ -23,6 +23,20 @@
 - (BOOL)canResignFirstResponder { return 1; }
 
 
+- (void)getReady {
+    
+    [self arrangeOnScreen];
+    [self doAnySetups];
+}
+
+
+- (void)doAnySetups {
+    
+    self.lastSliderValue = self.planeSlider.value;
+    self.planeSlider.maximumValue = 2.0f;
+    self.planeSlider.minimumValue = -2.0f;
+}
+
 
 - (void)arrangeOnScreen {
     
@@ -56,6 +70,7 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
+    LogInfo(@"***Mark***");
     
     if  ( !onScreen ) {
                     
@@ -71,10 +86,10 @@
 }
 
 - (IBAction)dismissControlPanel:(id)sender {
+ 
     
     LogDebug(@"***mark***");
 
-    
         [UIView animateWithDuration:0.25 
                               delay:0 
                             options:UIViewAnimationCurveEaseIn 
@@ -82,7 +97,7 @@
                              self.view.frame = [self offScreenPosition]; }
                          completion:NULL];
         onScreen = false;
-
+    
 }
 
 
@@ -90,7 +105,7 @@
 - (IBAction)planeSliderChanged:(id)sender {
     
     UISlider *_sender = sender;
-    float diff = _sender.value - self.planeSlider.value;
+    float diff = _sender.value - self.lastSliderValue;
     
     LogInfo(@"diff: %f", diff);
     

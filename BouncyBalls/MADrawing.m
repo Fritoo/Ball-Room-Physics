@@ -112,9 +112,14 @@ static MADrawing *controlPoint = nil;
 
 - (void)launchControlPanel {
     
-    MAControlPanelViewCon *controlPanel = [[MAControlPanelViewCon alloc] initWithNibName:@"ValueSliders" bundle:[NSBundle mainBundle]];
-    [[[UIWindow rootViewController] view] addSubview:controlPanel.view];
-    [controlPanel arrangeOnScreen];
+    
+    NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"ValueSliders" owner:self options:nil];
+    LogInfo(@"Array: %@", array);
+    
+    self.controlPanel = [array objectAtIndex:1];
+    
+    [[[UIWindow rootViewController] view] addSubview:self.controlPanel.view];
+    [self.controlPanel getReady];
 }
 
 - (void)launchObjectManager {

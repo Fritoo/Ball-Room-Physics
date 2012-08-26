@@ -11,6 +11,7 @@
 @interface MAControlPanelViewCon : UIViewController
 
 @property int onScreen;
+@property float lastSliderValue;
 @property (strong) IBOutlet UISlider *planeSlider;
 @property (strong) IBOutlet UILabel *label0;
 @property (strong) IBOutlet UILabel *label1;
@@ -21,6 +22,6 @@
 - (IBAction)dismissControlPanel:(id)sender;
 - (IBAction)planeSliderChanged:(id)sender;
 - (IBAction)velocityBurstPressed:(id)sender;
-- (void)arrangeOnScreen;
+- (void)getReady;
 
 @end

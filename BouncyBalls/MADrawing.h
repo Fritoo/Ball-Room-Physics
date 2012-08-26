@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class MAObjectManager, MAPlaneManager, MAPlaneCanvas;
+@class MAObjectManager, MAPlaneManager, MAPlaneCanvas, MAControlPanelViewCon;
 
 @interface MADrawing : NSObject
 
@@ -17,6 +17,7 @@
 @property (strong) MAObjectManager *objectManager;
 @property (strong) MAPlaneManager *planesManager;
 @property (strong) MAPlaneCanvas *planeCanvas;
+@property (strong) MAControlPanelViewCon *controlPanel;
 
 + (void)launch;
 + (MADrawing *)controlPoint;
