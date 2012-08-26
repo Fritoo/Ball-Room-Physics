@@ -15,5 +15,6 @@
 + (MAObjectManager *)objectManager;
 - (void)buildObjects;
 + (NSMutableArray *)objectStore;
++ (void)createVelocityBurst;
 
 @end

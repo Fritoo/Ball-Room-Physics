@@ -11,9 +11,12 @@
 
 // View
 #import "MACanvas.h"
+#import "MAPlaneCanvas.h"
+#import "MAControlPanelViewCon.h"
 
 // Planes
 #import "MAPlane.h"
+#import "MAPlaneManager.h"
 
 // Objects
 #import "Objects/MAObject.h"
@@ -21,6 +24,7 @@
 
 // Utils
 #import "MAUtils.h"
+#import "UIWindow+MainWindow.h"
 
 // Constants
 #import "MAConstants.h"
@@ -84,23 +88,34 @@ static MADrawing *controlPoint = nil;
     // Setup configurations
     [MAConstants generateConfig];
     
+    
     // Initialize planes manager
     [[MADrawing controlPoint] launchPlanesManager];
-    
-    // Make our confining planes
-    [[MADrawing controlPoint] buildPlanes];
-    
+        
     // Initialize manager
     [[MADrawing controlPoint] launchObjectManager];
     
+    // Draw bounding box
+    [[MADrawing controlPoint] drawPlanes];
+    
+    // Control Panel
+    [[MADrawing controlPoint] launchControlPanel];
+
     // Start drawing
-    dlink = [CADisplayLink displayLinkWithTarget:controlPoint selector:@selector(update)];
-    [dlink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
+//    dlink = [CADisplayLink displayLinkWithTarget:controlPoint selector:@selector(update)];
+//    [dlink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
     
     
 }
 
 
+
+- (void)launchControlPanel {
+    
+    MAControlPanelViewCon *controlPanel = [[MAControlPanelViewCon alloc] initWithNibName:@"ValueSliders" bundle:[NSBundle mainBundle]];
+    [[[UIWindow rootViewController] view] addSubview:controlPanel.view];
+    [controlPanel arrangeOnScreen];
+}
 
 - (void)launchObjectManager {
     
@@ -110,32 +125,30 @@ static MADrawing *controlPoint = nil;
 
 - (void)launchPlanesManager {
     
-    controlPoint.planesManager = [[NSMutableArray alloc] init];
+    // Launches manager and creates planes
+    controlPoint.planesManager = [MAPlaneManager planeManager];
 }
 
-- (void)buildPlanes {
-    
-    MAVector3 _planes[4] = {
-        
-        // Took me awhile to understand this,
-        // but these are not vector as position
-        // in 3d space, but the normal of the plane.
-        // { xDirection, yDirection, distanceToOrigin }
-        (MAVector3){  1,  0, 1 },                   // Right
-        (MAVector3){  0, -1, (1*meter)*screenRatio }, // Up
-        (MAVector3){ -1,  0, (1*meter) },             // Left
-        (MAVector3){  0,  1, 1 }                       // Down
-        
-    };
 
-    MAPlane *plane[4];
-    for ( int i = 0; i < 4; i++ ) {
-        plane[i] = [[MAPlane alloc] init];
-        plane[i].plane = _planes[i];
-        [controlPoint.planesManager addObject:plane[i]];
-    }
+- (void)drawPlanes {
+    
+    LogInfo(@"Drawing bounding box");
+    self.planeCanvas = [[MAPlaneCanvas alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.planeCanvas.backgroundColor = [UIColor whiteColor];
     
     
+    [[[UIWindow rootViewController] view] addSubview:self.planeCanvas];
+    LogInfo(@"\r\n\twindow: %@"
+            @"\n\trootViewCon: %@"
+            @"\n\tview: %@"
+            @"\n\tsuperview: %@"
+            @"\n\tbgColor: %@",
+            [UIWindow mainWindow],
+            [UIWindow rootViewController],
+            [[UIWindow rootViewController] view],
+            [[[UIWindow rootViewController] view] superview],
+            [[[UIWindow rootViewController] view] backgroundColor]);
+
 }
                    
                    
@@ -178,6 +191,7 @@ static MADrawing *controlPoint = nil;
     }
     
     [[MACanvas mainCanvas] setNeedsDisplay];
+    [self.planeCanvas setNeedsDisplay];
         
 }
 

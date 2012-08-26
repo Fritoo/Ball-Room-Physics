@@ -20,10 +20,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
     // Override point for customization after application launch.
     
     self.window.rootViewController = [[MAStaticRootViewCon alloc] init];
-    self.window.rootViewController.view.backgroundColor = [UIColor whiteColor];
+    self.window.rootViewController.view.backgroundColor = [UIColor clearColor];
 
     [self.window makeKeyAndVisible];
     

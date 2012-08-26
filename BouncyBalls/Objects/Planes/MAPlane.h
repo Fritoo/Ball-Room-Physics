@@ -13,5 +13,9 @@
 
 
 @property MAVector3 plane;
+@property int tag;
+
+- (NSString *)stringFromPlane;
+- (NSString *)stringFromRaw;
 
 @end

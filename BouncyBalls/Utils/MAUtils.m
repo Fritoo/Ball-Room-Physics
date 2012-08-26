@@ -7,6 +7,7 @@
 //
 
 #import "MAUtils.h"
+#import "UIWindow+MainWindow.h"
 
 @implementation MAUtils
 
@@ -116,5 +117,7 @@ double dot1 ( MAVector a, CGPoint b ) {
     return dotProduct;
     
 }
+
+
 
 @end

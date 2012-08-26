@@ -12,7 +12,7 @@
 
 
 #define USE_PLANES 1
-#define NUM_OBJECTS 20
+#define NUM_OBJECTS 1
 #define GRAVITY_ENABLED 0
 
 extern int meter;

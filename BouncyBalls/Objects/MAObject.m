@@ -110,18 +110,27 @@
         return;
     }
     
+    self.velocity = [self generateRandomVelocity];
+    
+}
+
+
+- (MAVector)generateRandomVelocity {
+    
     int anX = arc4random()%200;
     int anY = arc4random()%200;
     
     float x = (float)anX / meter;
     float y = (float)anY / meter;
-        
+    
     MAVector newVelocity;
     newVelocity.x = x;//0.110;
     newVelocity.y = y;//0.125;
-    self.velocity = newVelocity;
+
+    return newVelocity;
     
 }
+
 
 - (void)setDefaultCOR {
     

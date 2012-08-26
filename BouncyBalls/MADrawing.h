@@ -8,14 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-@class MAObjectManager;
+@class MAObjectManager, MAPlaneManager, MAPlaneCanvas;
 
 @interface MADrawing : NSObject
 
 
 @property float framerate;
 @property (strong) MAObjectManager *objectManager;
-@property (strong) NSMutableArray *planesManager;
+@property (strong) MAPlaneManager *planesManager;
+@property (strong) MAPlaneCanvas *planeCanvas;
 
 + (void)launch;
 + (MADrawing *)controlPoint;

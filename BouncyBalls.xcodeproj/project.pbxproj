@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6269049C15E9D513006AB216 /* MAPlaneCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 6269049B15E9D513006AB216 /* MAPlaneCanvas.m */; };
+		626904A415E9D575006AB216 /* MAPlaneManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 626904A315E9D575006AB216 /* MAPlaneManager.m */; };
+		626904A715E9E24F006AB216 /* UIWindow+MainWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 626904A615E9E24F006AB216 /* UIWindow+MainWindow.m */; };
+		6289AE4A15E9F3340025C4D7 /* ValueSliders.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6289AE4915E9F3340025C4D7 /* ValueSliders.xib */; };
+		6289AE5115E9F3680025C4D7 /* MAControlPanelViewCon.m in Sources */ = {isa = PBXBuildFile; fileRef = 6289AE5015E9F3680025C4D7 /* MAControlPanelViewCon.m */; };
 		6291EDAC15E948160090BC23 /* MAStaticRootViewCon.m in Sources */ = {isa = PBXBuildFile; fileRef = 6291EDAB15E948160090BC23 /* MAStaticRootViewCon.m */; };
 		7D25618315E608730063ED91 /* MAUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D25618215E608730063ED91 /* MAUtils.m */; };
 		7DDC9B5715E8487600616693 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DDC9B5615E8487600616693 /* CoreMotion.framework */; };
@@ -51,6 +56,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6269049A15E9D513006AB216 /* MAPlaneCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAPlaneCanvas.h; sourceTree = "<group>"; };
+		6269049B15E9D513006AB216 /* MAPlaneCanvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAPlaneCanvas.m; sourceTree = "<group>"; };
+		626904A215E9D575006AB216 /* MAPlaneManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAPlaneManager.h; sourceTree = "<group>"; };
+		626904A315E9D575006AB216 /* MAPlaneManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAPlaneManager.m; sourceTree = "<group>"; };
+		626904A515E9E24F006AB216 /* UIWindow+MainWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIWindow+MainWindow.h"; path = "UIWindow/UIWindow+MainWindow.h"; sourceTree = "<group>"; };
+		626904A615E9E24F006AB216 /* UIWindow+MainWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIWindow+MainWindow.m"; path = "UIWindow/UIWindow+MainWindow.m"; sourceTree = "<group>"; };
+		6289AE4915E9F3340025C4D7 /* ValueSliders.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ValueSliders.xib; path = BouncyBalls/ValueSliders.xib; sourceTree = SOURCE_ROOT; };
+		6289AE4F15E9F3680025C4D7 /* MAControlPanelViewCon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAControlPanelViewCon.h; sourceTree = "<group>"; };
+		6289AE5015E9F3680025C4D7 /* MAControlPanelViewCon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAControlPanelViewCon.m; sourceTree = "<group>"; };
 		6291EDAA15E948160090BC23 /* MAStaticRootViewCon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAStaticRootViewCon.h; sourceTree = "<group>"; };
 		6291EDAB15E948160090BC23 /* MAStaticRootViewCon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAStaticRootViewCon.m; sourceTree = "<group>"; };
 		7D25618115E608730063ED91 /* MAUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAUtils.h; sourceTree = "<group>"; };
@@ -124,6 +138,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		626904A115E9D575006AB216 /* PlaneManager */ = {
+			isa = PBXGroup;
+			children = (
+				626904A215E9D575006AB216 /* MAPlaneManager.h */,
+				626904A315E9D575006AB216 /* MAPlaneManager.m */,
+			);
+			name = PlaneManager;
+			path = BouncyBalls/Objects/PlaneManager;
+			sourceTree = SOURCE_ROOT;
+		};
+		6289AE4E15E9F3680025C4D7 /* Control Panel */ = {
+			isa = PBXGroup;
+			children = (
+				6289AE4F15E9F3680025C4D7 /* MAControlPanelViewCon.h */,
+				6289AE5015E9F3680025C4D7 /* MAControlPanelViewCon.m */,
+			);
+			path = "Control Panel";
+			sourceTree = "<group>";
+		};
 		6291EDA915E948160090BC23 /* Static View Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +214,7 @@
 				6291EDA915E948160090BC23 /* Static View Controller */,
 				7DEB550315D451FB00699925 /* MAAppDelegate.h */,
 				7DEB550415D451FB00699925 /* MAAppDelegate.m */,
+				6289AE4E15E9F3680025C4D7 /* Control Panel */,
 				7DEB552715D4524A00699925 /* MADrawing.h */,
 				7DEB552815D4524A00699925 /* MADrawing.m */,
 				7DEB552D15D453F300699925 /* MACanvas.h */,
@@ -188,6 +222,7 @@
 				7DEE11E415E7073500F69427 /* Collisions */,
 				7DEE11D015E6AA4500F69427 /* Categories */,
 				7DEB554A15D4612500699925 /* ObjectManager */,
+				626904A115E9D575006AB216 /* PlaneManager */,
 				7D25618015E608730063ED91 /* Utils */,
 				7DEB554415D45B4A00699925 /* Enums */,
 				7DEB553C15D45A4F00699925 /* Objects */,
@@ -205,6 +240,7 @@
 				7DEB54FC15D451FB00699925 /* BouncyBalls-Info.plist */,
 				7DEB54FD15D451FB00699925 /* InfoPlist.strings */,
 				7DEB550015D451FB00699925 /* main.m */,
+				6289AE4915E9F3340025C4D7 /* ValueSliders.xib */,
 				7DEB550215D451FB00699925 /* BouncyBalls-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -268,6 +304,8 @@
 			isa = PBXGroup;
 			children = (
 				7DEE11D115E6AA4500F69427 /* NSMutableArray */,
+				626904A515E9E24F006AB216 /* UIWindow+MainWindow.h */,
+				626904A615E9E24F006AB216 /* UIWindow+MainWindow.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -294,6 +332,8 @@
 			children = (
 				7DEE11DD15E6B03000F69427 /* MAPlane.h */,
 				7DEE11DE15E6B03000F69427 /* MAPlane.m */,
+				6269049A15E9D513006AB216 /* MAPlaneCanvas.h */,
+				6269049B15E9D513006AB216 /* MAPlaneCanvas.m */,
 			);
 			path = Planes;
 			sourceTree = "<group>";
@@ -392,6 +432,7 @@
 			files = (
 				7DEB54FF15D451FB00699925 /* InfoPlist.strings in Resources */,
 				7DF7752415E83E4700D4DFBD /* Contacts in Resources */,
+				6289AE4A15E9F3340025C4D7 /* ValueSliders.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +480,10 @@
 				7DEE11E715E7073500F69427 /* MACollisionDetector.m in Sources */,
 				7DEE11F115E7091400F69427 /* MAConstants.m in Sources */,
 				6291EDAC15E948160090BC23 /* MAStaticRootViewCon.m in Sources */,
+				6269049C15E9D513006AB216 /* MAPlaneCanvas.m in Sources */,
+				626904A415E9D575006AB216 /* MAPlaneManager.m in Sources */,
+				626904A715E9E24F006AB216 /* UIWindow+MainWindow.m in Sources */,
+				6289AE5115E9F3680025C4D7 /* MAControlPanelViewCon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

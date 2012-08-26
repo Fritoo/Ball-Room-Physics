@@ -46,6 +46,7 @@ MAObjectManager *objectManager = nil;
     for ( int i = 0; i < NUM_OBJECTS; i++ ) {
         CGRect frameRect = CGRectMake((i+1)*30, (i+1)*36, 20, 20);
         object[i] = [[MAObject alloc] initWithShape:circle frame:frameRect];
+        object[i].tag = i;
         [self.objectStore addObject:object[i]];
     }
     
@@ -55,5 +56,15 @@ MAObjectManager *objectManager = nil;
     return objectManager.objectStore;
 }
 
+
++ (void)createVelocityBurst {
+    
+    for ( MAObject *object in [MAObjectManager objectStore] ) {
+        
+        object.velocity = [object generateRandomVelocity];
+        
+    }
+    
+}
 
 @end

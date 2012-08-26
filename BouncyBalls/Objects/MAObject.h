@@ -48,8 +48,13 @@
 // Coefficient of restitution
 @property float COR;
 
+// Tag
+@property int tag;
+
 
 - (id)initWithShape: (MAShape)theShape frame:(CGRect)theFrame;
 - (void)updateCenter: (CGPoint)newCenter;
+- (MAVector)generateRandomVelocity;
+
 
 @end
