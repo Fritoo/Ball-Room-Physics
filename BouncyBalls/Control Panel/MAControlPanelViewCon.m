@@ -111,7 +111,7 @@
     
     LogInfo(@"diff: %f", diff);
     
-    [MAPlaneManager incrementPlaneStoreVectorsBy:diff];
+    [MAPlaneManager incrementPlaneStoreZValueBy:diff];
     [self updatePlaneVectorLabels];
     
 }
@@ -150,6 +150,13 @@
     LogDebug(@"***mark***");
 
 
+}
+
+
+- (IBAction)reset:(id)sender {
+    
+    
+    
 }
 
 

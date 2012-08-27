@@ -24,7 +24,7 @@ int usingRealGravity;
     CGSize screenSize = [[UIScreen mainScreen] bounds].size;
     float screenWidth = screenSize.width;
     float screenHeight = screenSize.height;
-    meter = screenWidth;
+    meter = screenWidth/2;
     
     LogInfo(@"\r\nmeter: %d\n"
              "screenWidth: %f\n"

@@ -77,6 +77,38 @@ MAPlaneManager *planeManager = nil;
     }
 }
 
++ (void)setPlaneStoreVectorsBy: (float)newValue {
+    
+    for (MAPlane *plane in [MAPlaneManager planeStore]) {
+        MAVector3 p1 = plane.plane;
+        MAVector3 newPlane = { newValue, newValue, p1.z };
+        plane.plane = newPlane;
+    }
+    
+}
+
++ (void)setPlaneStoreZValueBy: (float)newValue {
+    
+    for (MAPlane *plane in [MAPlaneManager planeStore]) {
+        MAVector3 p1 = plane.plane;
+        MAVector3 newPlane = { p1.x, p1.y, newValue };
+        plane.plane = newPlane;
+    }
+
+    
+}
+
++ (void)incrementPlaneStoreZValueBy: (float)increment {
+    
+    for (MAPlane *plane in [MAPlaneManager planeStore]) {
+        MAVector3 p1 = plane.plane;
+        MAVector3 incrementedPlane = { p1.x, p1.y, p1.z + increment };
+        plane.plane = incrementedPlane;
+    }
+    
+    
+}
+
 
 
 + (NSMutableArray *)buildPlaneStore: (MAVector3*)_planes count: (int)count {

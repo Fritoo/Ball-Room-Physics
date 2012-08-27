@@ -198,7 +198,7 @@ static MADrawing *controlPoint = nil;
     }
     
     [[MACanvas mainCanvas] setNeedsDisplay];
-//    [self.planeCanvas setNeedsDisplay];
+    [self.planeCanvas setNeedsDisplay];
     
 }
 

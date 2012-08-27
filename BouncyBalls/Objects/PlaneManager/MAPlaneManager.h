@@ -20,6 +20,8 @@
 + (void)updatePlaneStore: (NSMutableArray *)newStore;
 + (void)incrementPlaneStoreVectorsBy: (float)increment;
 + (void)decrementPlaneStoreVectorsBy: (float)decrement;
-
++ (void)setPlaneStoreVectorsBy: (float)newValue;
++ (void)setPlaneStoreZValueBy: (float)newValue;
++ (void)incrementPlaneStoreZValueBy: (float)increment;
 
 @end
