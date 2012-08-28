@@ -26,7 +26,6 @@
         double normal = dot1(vect2,  object.center );
         
         float distance = normal + plane.plane.z;
-        LogInfo(@"distance: %f", distance);
         
         if (distance < 0 && dot(vect2, object.velocity) < 0 )
         {
