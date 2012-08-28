@@ -48,12 +48,16 @@ MAPlaneManager *planeManager = nil;
         // but these are not vector as position
         // in 3d space, but the normal of the plane.
         // { xDirection, yDirection, distanceToOrigin }
-        (MAVector3){  1,  0, 1},                     // Right
-        (MAVector3){  0, -1, (1*meter)*screenRatio }, // Up
-        (MAVector3){ -1,  0, 1*meter },             // Left
-        (MAVector3){  0,  1, 1 }                      // Down
+        (MAVector3){  1,  0, 1},                     // Right vector
+        (MAVector3){  0, -1, (1*meter)*screenRatio }, // Up vect
+        (MAVector3){ -1,  0, 1*meter },             // Left vect
+        (MAVector3){  0,  1, 1 }                      // Down vect
         
     };
+    
+    for (int i = 0; i < 4; i++) {
+        LogInfo(@"\r\nplane[%d] normal: %0.2f\n", i, dot( (MAVector){_planes[i].x, _planes[i].y}, (MAVector){1,1}) );
+    }
     
     [MAPlaneManager updatePlaneStore:[MAPlaneManager buildPlaneStore:_planes count:4]];
     

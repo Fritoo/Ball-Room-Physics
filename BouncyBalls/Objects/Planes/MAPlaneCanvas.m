@@ -39,7 +39,7 @@
     MAVector3 plane3 = (MAVector3)[[[MAPlaneManager planeStore] objectAtIndex:3] plane];
 
     CGContextMoveToPoint(context, plane0.x, plane0.y);
-    CGContextAddLineToPoint(context, plane0.x+plane0.z, plane0.y);
+    CGContextAddLineToPoint(context, plane0.x+plane0.z*meter, plane0.y);
     
     CGContextMoveToPoint(context, plane1.x, (plane1.y*meter*screenRatio)*-1);
     CGContextAddLineToPoint(context, plane1.x, plane1.y-plane1.z);
