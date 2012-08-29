@@ -48,17 +48,15 @@ MAPlaneManager *planeManager = nil;
         // but these are not vector as position
         // in 3d space, but the normal of the plane.
         // { xDirection, yDirection, distanceToOrigin }
-        (MAVector3){  1,  0, 1},                     // Right vector
-        (MAVector3){  0, -1, (1*meter)*screenRatio }, // Up vect
-        (MAVector3){ -1,  0, 1*meter },             // Left vect
-        (MAVector3){  0,  1, 1 }                      // Down vect
+        
+        (MAVector3){  1,  0, 1},                        // Right vector
+        (MAVector3){ -1,  0, 1*meter },                 // Left vect
+        
+        (MAVector3){  0, -1, (1*meter)*screenRatio },   // Up vect
+        (MAVector3){  0,  1, 1 }                        // Down vect
         
     };
-    
-    for (int i = 0; i < 4; i++) {
-        LogInfo(@"\r\nplane[%d] normal: %0.2f\n", i, dot( (MAVector){_planes[i].x, _planes[i].y}, (MAVector){1,1}) );
-    }
-    
+        
     [MAPlaneManager updatePlaneStore:[MAPlaneManager buildPlaneStore:_planes count:4]];
     
 }
@@ -67,8 +65,10 @@ MAPlaneManager *planeManager = nil;
     
     for (MAPlane *plane in [MAPlaneManager planeStore]) {
         MAVector3 p1 = plane.plane;
-        MAVector3 incrementedPlane = { p1.x + increment, p1.y + increment, p1.z + increment };
+        MAVector3 incrementedPlane = { p1.x + increment, p1.y + increment, p1.z};
         plane.plane = incrementedPlane;
+        LogInfo(@"normal: %0.2f\n", dot( (MAVector){plane.plane.x, plane.plane.y}, (MAVector){1,0}) );
+
     }
 }
 
@@ -76,7 +76,7 @@ MAPlaneManager *planeManager = nil;
     
     for (MAPlane *plane in [MAPlaneManager planeStore]) {
         MAVector3 p1 = plane.plane;
-        MAVector3 decrementedPlane = { p1.x - decrement, p1.y - decrement, p1.z - decrement };
+        MAVector3 decrementedPlane = { p1.x - decrement, p1.y - decrement, p1.z};
         plane.plane = decrementedPlane;
     }
 }

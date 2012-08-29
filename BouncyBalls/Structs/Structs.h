@@ -21,6 +21,16 @@ typedef struct MAVector3 {
     
 } MAVector3;
 
+
+typedef struct MALine {
+    
+    float x;
+    float y;
+    float x2;
+    float y2;
+    
+} MALine;
+
 //typedef struct MAContact {
     //distance
     //normal

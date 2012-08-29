@@ -17,5 +17,8 @@
 
 - (NSString *)stringFromPlane;
 - (NSString *)stringFromRaw;
+- (CGRect)rectFromPlane;
+- (MALine)lineFromPlane;
+
 
 @end

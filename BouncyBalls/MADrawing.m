@@ -145,6 +145,8 @@ static MADrawing *controlPoint = nil;
     
     
     [[[UIWindow rootViewController] view] addSubview:self.planeCanvas];
+    self.planeCanvas.transform = CGAffineTransformMakeScale(0.5, 0.5);
+    
     LogInfo(@"\r\n\twindow: %@"
             @"\n\trootViewCon: %@"
             @"\n\tview: %@"

@@ -111,8 +111,11 @@
     
     LogInfo(@"diff: %f", diff);
     
-    [MAPlaneManager incrementPlaneStoreZValueBy:diff];
+    
+    [MAPlaneManager incrementPlaneStoreVectorsBy:diff];
     [self updatePlaneVectorLabels];
+    
+    self.lastSliderValue = _sender.value;
     
 }
 
