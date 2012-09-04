@@ -166,6 +166,15 @@
 			path = "Static View Controller";
 			sourceTree = "<group>";
 		};
+		62A9B51015F1C557009B4807 /* UIWindow */ = {
+			isa = PBXGroup;
+			children = (
+				626904A515E9E24F006AB216 /* UIWindow+MainWindow.h */,
+				626904A615E9E24F006AB216 /* UIWindow+MainWindow.m */,
+			);
+			name = UIWindow;
+			sourceTree = "<group>";
+		};
 		7D25618015E608730063ED91 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,10 +220,10 @@
 		7DEB54FA15D451FB00699925 /* BouncyBalls */ = {
 			isa = PBXGroup;
 			children = (
+				6289AE4E15E9F3680025C4D7 /* Control Panel */,
 				6291EDA915E948160090BC23 /* Static View Controller */,
 				7DEB550315D451FB00699925 /* MAAppDelegate.h */,
 				7DEB550415D451FB00699925 /* MAAppDelegate.m */,
-				6289AE4E15E9F3680025C4D7 /* Control Panel */,
 				7DEB552715D4524A00699925 /* MADrawing.h */,
 				7DEB552815D4524A00699925 /* MADrawing.m */,
 				7DEB552D15D453F300699925 /* MACanvas.h */,
@@ -304,8 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				7DEE11D115E6AA4500F69427 /* NSMutableArray */,
-				626904A515E9E24F006AB216 /* UIWindow+MainWindow.h */,
-				626904A615E9E24F006AB216 /* UIWindow+MainWindow.m */,
+				62A9B51015F1C557009B4807 /* UIWindow */,
 			);
 			path = Categories;
 			sourceTree = "<group>";

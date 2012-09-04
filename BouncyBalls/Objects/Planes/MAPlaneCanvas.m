@@ -46,26 +46,19 @@
 
     
     // Right |--->
-    CGContextSetStrokeColorWithColor(context, [[UIColor greenColor] CGColor]);
-    MALine line = [_plane0 lineFromPlane];
-    CGContextMoveToPoint(context, line.x, line.y);
-    CGContextAddLineToPoint(context, line.x2, line.y2);
+    CGContextSetFillColorWithColor(context, [[UIColor greenColor] CGColor]);
+    CGContextMoveToPoint(context, plane0.x,plane0.y);
+    CGContextAddLineToPoint(context, meter, plane0.y*meter*screenRatio);
     CGContextStrokePath(context);
-
     
-//    CGContextMoveToPoint(context, meter/plane0.x, meter*screenRatio/2);
-//    CGContextAddLineToPoint(context, plane0.x, plane0.y);
-//    
-//    CGContextMoveToPoint(context, meter/2, meter*screenRatio/2);
-//    CGContextAddLineToPoint(context, plane0.x*meter, plane0.y+meter*screenRatio);
-//    CGContextStrokePath(context);
      
     
-//    // Left  <----|
-//    CGContextSetStrokeColorWithColor(context, [[UIColor blueColor] CGColor]);
-//    CGContextMoveToPoint(context,    plane1.x*-1*meter,  plane1.y);
-//    CGContextAddLineToPoint(context, plane1.x*-1*meter, (plane1.y+1)*meter*screenRatio  );
-//    CGContextStrokePath(context);
+    // Left  <----|
+    CGContextSetStrokeColorWithColor(context, [[UIColor blueColor] CGColor]);
+    CGContextMoveToPoint(context,    plane1.x*-1*meter,  plane1.y);
+    CGContextAddLineToPoint(context, plane1.x*-1*meter, (plane1.y+1)*meter*screenRatio  );
+    CGContextStrokePath(context);
+    
 //
 //    
 //    // Up   ^

@@ -18,6 +18,8 @@
 @property (strong) IBOutlet UILabel *label2;
 @property (strong) IBOutlet UILabel *label3;
 
+@property (strong) IBOutlet UILabel *degreeLabel0;
+
 
 - (IBAction)dismissControlPanel:(id)sender;
 - (IBAction)planeSliderChanged:(id)sender;

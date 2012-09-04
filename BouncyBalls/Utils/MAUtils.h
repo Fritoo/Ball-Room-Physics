@@ -35,6 +35,15 @@ MAVector addVectorByVector ( MAVector a, MAVector b );
 double dot ( MAVector a, MAVector b );
 double dot1 ( MAVector a, CGPoint b );
 
+
+MAVector CGPointToMAVector (CGPoint vect);
+CGPoint MAVectorToCGPoint (MAVector vect);
+CGPoint MARectGetCenter (CGRect rect);
+
+double distanceToPoint (CGPoint pointA, CGPoint pointB);
+double distanceToPoint1 (MAVector pointA, MAVector pointB);
+
+
 void MALog(NSString *format, ...);
 
 

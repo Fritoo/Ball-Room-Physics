@@ -32,7 +32,6 @@
             // collision response
             // R = V - (1+COR)*N*(V⋅N)
             
-            
             // Calculate dot product
             float dotResult = dot(vect2, object.velocity);
             

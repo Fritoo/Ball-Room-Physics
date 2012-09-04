@@ -33,8 +33,10 @@
 - (void)doAnySetups {
     
     self.lastSliderValue = self.planeSlider.value;
-    self.planeSlider.maximumValue = 2.0f;
-    self.planeSlider.minimumValue = -2.0f;
+    self.planeSlider.maximumValue = 1.0f;
+    self.planeSlider.minimumValue = -1.0f;
+    self.degreeLabel0.text = [NSString stringWithFormat:@"(%0.1f°)", [[[MAPlaneManager planeStore] objectAtIndex:0] angleToScreenCenter]];
+    
     
     self.view.userInteractionEnabled = 1;
 }
@@ -127,13 +129,18 @@
         
         if ( counter == 0 ) {
             self.label0.text = [plane stringFromRaw];
-        } else if ( counter == 1 ) {
+            self.degreeLabel0.text = [NSString stringWithFormat:@"(%0.1f°)", [plane angleToScreenCenter]];
+        }
+        
+        /*else if ( counter == 1 ) {
             self.label1.text = [plane stringFromRaw];
         } else if ( counter == 2 ) {
             self.label2.text = [plane stringFromRaw];
         } else if ( counter == 3 ) {
             self.label3.text = [plane stringFromRaw];
         }
+        */
+        
         counter++;
     }
     

@@ -80,5 +80,28 @@
     
 }
 
+- (double)angleBetween:(MAVector)v2 {
+    
+    MAVector v1 = {self.plane.x, self.plane.y};
+    
+    double normal = dot(v1,  v2);
+
+    return normal;
+}
+
+- (double)angleToScreenCenter {
+    
+    CGPoint center = MARectGetCenter([[UIScreen mainScreen] bounds]);
+    return [self angleBetween:CGPointToMAVector(center)];
+        
+}
+
+
+
+
+
+
+            
+
 
 @end

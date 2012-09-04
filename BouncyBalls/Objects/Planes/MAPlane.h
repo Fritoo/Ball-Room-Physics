@@ -19,6 +19,7 @@
 - (NSString *)stringFromRaw;
 - (CGRect)rectFromPlane;
 - (MALine)lineFromPlane;
-
+- (double)angleBetween:(MAVector)v2;
+- (double)angleToScreenCenter;
 
 @end
