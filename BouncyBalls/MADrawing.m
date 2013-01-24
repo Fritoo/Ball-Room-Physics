@@ -99,10 +99,10 @@ static MADrawing *controlPoint = nil;
     [[MADrawing controlPoint] launchObjectManager];
     
     // Draw bounding box
-    [[MADrawing controlPoint] drawPlanes];
+//    [[MADrawing controlPoint] drawPlanes];
     
     // Control Panel
-    [[MADrawing controlPoint] launchControlPanel];
+//    [[MADrawing controlPoint] launchControlPanel];
 
     // Start drawing
     dlink = [CADisplayLink displayLinkWithTarget:controlPoint selector:@selector(update)];
@@ -200,7 +200,7 @@ static MADrawing *controlPoint = nil;
     }
     
     [[MACanvas mainCanvas] setNeedsDisplay];
-    [self.planeCanvas setNeedsDisplay];
+//    [self.planeCanvas setNeedsDisplay];
     
 }
 

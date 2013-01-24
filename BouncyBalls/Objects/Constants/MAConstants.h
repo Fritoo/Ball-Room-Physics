@@ -13,7 +13,7 @@
 
 #define USE_PLANES 1
 #define NUM_OBJECTS 15
-#define GRAVITY_ENABLED 0
+#define GRAVITY_ENABLED 1
 
 
 #define PI 3.14159

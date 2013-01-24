@@ -100,7 +100,7 @@ int usingRealGravity;
     result = divideVectors(result, meter);
     result = multiplyVectors(result, 0.01);
 
-    MALog(@"gravity update: %f, %f", result.x, result.y);
+//    MALog(@"gravity update: %f, %f", result.x, result.y);
     return result;
 }
 

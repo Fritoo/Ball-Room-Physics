@@ -38,7 +38,6 @@
 		7DEB554215D45A4F00699925 /* MAObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB553E15D45A4F00699925 /* MAObject.m */; };
 		7DEB554D15D4612500699925 /* MAObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB554C15D4612500699925 /* MAObjectManager.m */; };
 		7DEB554E15D4612500699925 /* MAObjectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEB554C15D4612500699925 /* MAObjectManager.m */; };
-		7DEE11D515E6AA4500F69427 /* NSMutableArray+CArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE11D415E6AA4500F69427 /* NSMutableArray+CArray.m */; };
 		7DEE11DF15E6B03000F69427 /* MAPlane.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE11DE15E6B03000F69427 /* MAPlane.m */; };
 		7DEE11E715E7073500F69427 /* MACollisionDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE11E615E7073500F69427 /* MACollisionDetector.m */; };
 		7DEE11F115E7091400F69427 /* MAConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE11F015E7091400F69427 /* MAConstants.m */; };
@@ -99,8 +98,6 @@
 		7DEB554515D45B4A00699925 /* Enums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enums.h; sourceTree = "<group>"; };
 		7DEB554B15D4612500699925 /* MAObjectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAObjectManager.h; sourceTree = "<group>"; };
 		7DEB554C15D4612500699925 /* MAObjectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAObjectManager.m; sourceTree = "<group>"; };
-		7DEE11D315E6AA4500F69427 /* NSMutableArray+CArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+CArray.h"; sourceTree = "<group>"; };
-		7DEE11D415E6AA4500F69427 /* NSMutableArray+CArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+CArray.m"; sourceTree = "<group>"; };
 		7DEE11DD15E6B03000F69427 /* MAPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAPlane.h; sourceTree = "<group>"; };
 		7DEE11DE15E6B03000F69427 /* MAPlane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAPlane.m; sourceTree = "<group>"; };
 		7DEE11E515E7073500F69427 /* MACollisionDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MACollisionDetector.h; sourceTree = "<group>"; };
@@ -329,8 +326,6 @@
 		7DEE11D215E6AA4500F69427 /* C_Array */ = {
 			isa = PBXGroup;
 			children = (
-				7DEE11D315E6AA4500F69427 /* NSMutableArray+CArray.h */,
-				7DEE11D415E6AA4500F69427 /* NSMutableArray+CArray.m */,
 			);
 			path = C_Array;
 			sourceTree = "<group>";
@@ -483,7 +478,6 @@
 				7DEB554115D45A4F00699925 /* MAObject.m in Sources */,
 				7DEB554D15D4612500699925 /* MAObjectManager.m in Sources */,
 				7D25618315E608730063ED91 /* MAUtils.m in Sources */,
-				7DEE11D515E6AA4500F69427 /* NSMutableArray+CArray.m in Sources */,
 				7DEE11DF15E6B03000F69427 /* MAPlane.m in Sources */,
 				7DEE11E715E7073500F69427 /* MACollisionDetector.m in Sources */,
 				7DEE11F115E7091400F69427 /* MAConstants.m in Sources */,
@@ -541,7 +535,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = (
+					armv7,
+					armv6,
+				);
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -569,7 +566,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = (
+					armv7,
+					armv6,
+				);
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -592,8 +592,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				GCC_DYNAMIC_NO_PIC = YES;
+				ARCHS = (
+					armv7,
+					armv6,
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BouncyBalls/BouncyBalls-Prefix.pch";
@@ -603,10 +606,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)",
 				);
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-all_load",
-				);
+				OTHER_LDFLAGS = "-v";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "$(CONTENTS_FOLDER_PATH)/**";
 				WRAPPER_EXTENSION = app;
@@ -617,8 +617,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				GCC_DYNAMIC_NO_PIC = YES;
+				ARCHS = (
+					armv7,
+					armv6,
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BouncyBalls/BouncyBalls-Prefix.pch";
@@ -628,10 +631,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)",
 				);
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-all_load",
-				);
+				OTHER_LDFLAGS = "-v";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "$(CONTENTS_FOLDER_PATH)/**";
 				WRAPPER_EXTENSION = app;

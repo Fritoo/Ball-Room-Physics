@@ -109,13 +109,8 @@ double dot ( MAVector a, MAVector b ) {
 
 double dot1 ( MAVector a, CGPoint b ) {
     
-    double dotProduct;
-    
-    MAVector vect = { a.x*b.x, a.y*b.y };
-    dotProduct = vect.x + vect.y;
-    
-    return dotProduct;
-    
+    return dot(a, (MAVector){b.x, b.y});
+        
 }
 
 
@@ -151,14 +146,8 @@ double distanceToPoint (CGPoint pointA, CGPoint pointB) {
 
 double distanceToPoint1 (MAVector pointA, MAVector pointB) {
     
-    
-    // Pythagorean theorum
-    float dx=pointA.x - pointB.x;
-    float dy=pointA.y - pointB.y;
-    float distance =   quickSqrt(  (dx*dx) + (dy*dy) );
-    
-    return distance;
-    
+    return distanceToPoint((CGPoint){pointA.x, pointA.y}, (CGPoint){pointB.x, pointB.y} );
+
 }
 
 

@@ -169,5 +169,16 @@
     
 }
 
+- (BOOL)shouldAutorotate {
+    
+    return 0;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+    
+    return (UIInterfaceOrientationIsPortrait(toInterfaceOrientation));
+}
+
+
 
 @end
