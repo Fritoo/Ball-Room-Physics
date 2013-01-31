@@ -14,6 +14,18 @@
 		6289AE5115E9F3680025C4D7 /* MAControlPanelViewCon.m in Sources */ = {isa = PBXBuildFile; fileRef = 6289AE5015E9F3680025C4D7 /* MAControlPanelViewCon.m */; };
 		6291EDAC15E948160090BC23 /* MAStaticRootViewCon.m in Sources */ = {isa = PBXBuildFile; fileRef = 6291EDAB15E948160090BC23 /* MAStaticRootViewCon.m */; };
 		7D25618315E608730063ED91 /* MAUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D25618215E608730063ED91 /* MAUtils.m */; };
+		7D3A1D9016B71385005CE5F3 /* libEnsighten-release-fat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3A1D8F16B71385005CE5F3 /* libEnsighten-release-fat.a */; };
+		7D3A1D9116B71385005CE5F3 /* libEnsighten-release-fat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3A1D8F16B71385005CE5F3 /* libEnsighten-release-fat.a */; };
+		7DAC490016B3291A00480E58 /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DAC48FF16B3291900480E58 /* libFlurry.a */; };
+		7DAC490116B3291A00480E58 /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DAC48FF16B3291900480E58 /* libFlurry.a */; };
+		7DAC490316B3293B00480E58 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DAC490216B3293B00480E58 /* CFNetwork.framework */; };
+		7DAC490516B3295100480E58 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DAC490416B3295100480E58 /* SystemConfiguration.framework */; };
+		7DAC490B16B32B7B00480E58 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DAC490A16B32B7B00480E58 /* libz.dylib */; };
+		7DAC490D16B32B8000480E58 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DAC490C16B32B8000480E58 /* CoreMedia.framework */; };
+		7DAC490F16B32B8700480E58 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DAC490E16B32B8700480E58 /* CoreTelephony.framework */; };
+		7DAC491116B32B9900480E58 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DAC491016B32B9900480E58 /* MediaPlayer.framework */; };
+		7DD25BDC16B7585800570BD3 /* MAInfoScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD25BDB16B7585800570BD3 /* MAInfoScreen.m */; };
+		7DD25BDD16B7585800570BD3 /* MAInfoScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD25BDB16B7585800570BD3 /* MAInfoScreen.m */; };
 		7DDC9B5715E8487600616693 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DDC9B5615E8487600616693 /* CoreMotion.framework */; };
 		7DEB54F315D451FB00699925 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DEB54F215D451FB00699925 /* UIKit.framework */; };
 		7DEB54F515D451FB00699925 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DEB54F415D451FB00699925 /* Foundation.framework */; };
@@ -68,6 +80,18 @@
 		6291EDAB15E948160090BC23 /* MAStaticRootViewCon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAStaticRootViewCon.m; sourceTree = "<group>"; };
 		7D25618115E608730063ED91 /* MAUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAUtils.h; sourceTree = "<group>"; };
 		7D25618215E608730063ED91 /* MAUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAUtils.m; sourceTree = "<group>"; };
+		7D34EE6C16B3690800025D30 /* Ensighten.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ensighten.h; path = "../../../Ensighten/iOS/iOS/ios-core/Source/Core/Ensighten/Ensighten.h"; sourceTree = "<group>"; };
+		7D3A1D8F16B71385005CE5F3 /* libEnsighten-release-fat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libEnsighten-release-fat.a"; path = "../../../../Library/Developer/Xcode/DerivedData/Ensighten-abesmotqcpixfrhivkphsmnchrbp/Build/Products/libEnsighten-release-fat.a"; sourceTree = "<group>"; };
+		7DAC48FE16B3291900480E58 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
+		7DAC48FF16B3291900480E58 /* libFlurry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry.a; sourceTree = "<group>"; };
+		7DAC490216B3293B00480E58 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		7DAC490416B3295100480E58 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		7DAC490A16B32B7B00480E58 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		7DAC490C16B32B8000480E58 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		7DAC490E16B32B8700480E58 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		7DAC491016B32B9900480E58 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		7DD25BDA16B7585800570BD3 /* MAInfoScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAInfoScreen.h; sourceTree = "<group>"; };
+		7DD25BDB16B7585800570BD3 /* MAInfoScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAInfoScreen.m; sourceTree = "<group>"; };
 		7DDC9B5615E8487600616693 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		7DEB54EE15D451FB00699925 /* BouncyBalls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BouncyBalls.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DEB54F215D451FB00699925 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -112,12 +136,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DAC491116B32B9900480E58 /* MediaPlayer.framework in Frameworks */,
+				7DAC490F16B32B8700480E58 /* CoreTelephony.framework in Frameworks */,
+				7DAC490D16B32B8000480E58 /* CoreMedia.framework in Frameworks */,
+				7DAC490B16B32B7B00480E58 /* libz.dylib in Frameworks */,
+				7DAC490516B3295100480E58 /* SystemConfiguration.framework in Frameworks */,
+				7DAC490316B3293B00480E58 /* CFNetwork.framework in Frameworks */,
 				7DDC9B5715E8487600616693 /* CoreMotion.framework in Frameworks */,
 				7DEB552C15D453B600699925 /* QuartzCore.framework in Frameworks */,
 				7DEB54F315D451FB00699925 /* UIKit.framework in Frameworks */,
 				7DEB54F515D451FB00699925 /* Foundation.framework in Frameworks */,
 				7DEB54F715D451FB00699925 /* CoreGraphics.framework in Frameworks */,
 				7DEB54F915D451FB00699925 /* CoreData.framework in Frameworks */,
+				7DAC490016B3291A00480E58 /* libFlurry.a in Frameworks */,
+				7D3A1D9016B71385005CE5F3 /* libEnsighten-release-fat.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +161,8 @@
 				7DEB551115D451FB00699925 /* UIKit.framework in Frameworks */,
 				7DEB551215D451FB00699925 /* Foundation.framework in Frameworks */,
 				7DEB551315D451FB00699925 /* CoreData.framework in Frameworks */,
+				7DAC490116B3291A00480E58 /* libFlurry.a in Frameworks */,
+				7D3A1D9116B71385005CE5F3 /* libEnsighten-release-fat.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,11 +215,27 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		7DAC48FD16B3291900480E58 /* Flurry */ = {
+			isa = PBXGroup;
+			children = (
+				7DAC48FE16B3291900480E58 /* Flurry.h */,
+				7DAC48FF16B3291900480E58 /* libFlurry.a */,
+			);
+			path = Flurry;
+			sourceTree = "<group>";
+		};
+		7DD25BD916B7585800570BD3 /* Info Display */ = {
+			isa = PBXGroup;
+			children = (
+				7DD25BDA16B7585800570BD3 /* MAInfoScreen.h */,
+				7DD25BDB16B7585800570BD3 /* MAInfoScreen.m */,
+			);
+			path = "Info Display";
+			sourceTree = "<group>";
+		};
 		7DEB54E315D451FB00699925 = {
 			isa = PBXGroup;
 			children = (
-				7DDC9B5615E8487600616693 /* CoreMotion.framework */,
-				7DEB552B15D453B600699925 /* QuartzCore.framework */,
 				7DEB54FA15D451FB00699925 /* BouncyBalls */,
 				7DEB551615D451FB00699925 /* BouncyBallsTests */,
 				7DEB54F115D451FB00699925 /* Frameworks */,
@@ -205,6 +255,14 @@
 		7DEB54F115D451FB00699925 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7DAC491016B32B9900480E58 /* MediaPlayer.framework */,
+				7DAC490E16B32B8700480E58 /* CoreTelephony.framework */,
+				7DAC490C16B32B8000480E58 /* CoreMedia.framework */,
+				7DAC490A16B32B7B00480E58 /* libz.dylib */,
+				7DAC490416B3295100480E58 /* SystemConfiguration.framework */,
+				7DAC490216B3293B00480E58 /* CFNetwork.framework */,
+				7DDC9B5615E8487600616693 /* CoreMotion.framework */,
+				7DEB552B15D453B600699925 /* QuartzCore.framework */,
 				7DEB54F215D451FB00699925 /* UIKit.framework */,
 				7DEB54F415D451FB00699925 /* Foundation.framework */,
 				7DEB54F615D451FB00699925 /* CoreGraphics.framework */,
@@ -217,6 +275,9 @@
 		7DEB54FA15D451FB00699925 /* BouncyBalls */ = {
 			isa = PBXGroup;
 			children = (
+				7D34EE6C16B3690800025D30 /* Ensighten.h */,
+				7D3A1D8F16B71385005CE5F3 /* libEnsighten-release-fat.a */,
+				7DAC48FD16B3291900480E58 /* Flurry */,
 				6289AE4E15E9F3680025C4D7 /* Control Panel */,
 				6291EDA915E948160090BC23 /* Static View Controller */,
 				7DEB550315D451FB00699925 /* MAAppDelegate.h */,
@@ -225,6 +286,7 @@
 				7DEB552815D4524A00699925 /* MADrawing.m */,
 				7DEB552D15D453F300699925 /* MACanvas.h */,
 				7DEB552E15D453F300699925 /* MACanvas.m */,
+				7DD25BD916B7585800570BD3 /* Info Display */,
 				7DEE11E415E7073500F69427 /* Collisions */,
 				7DEE11D015E6AA4500F69427 /* Categories */,
 				7DEB554A15D4612500699925 /* ObjectManager */,
@@ -486,6 +548,7 @@
 				626904A415E9D575006AB216 /* MAPlaneManager.m in Sources */,
 				626904A715E9E24F006AB216 /* UIWindow+MainWindow.m in Sources */,
 				6289AE5115E9F3680025C4D7 /* MAControlPanelViewCon.m in Sources */,
+				7DD25BDC16B7585800570BD3 /* MAInfoScreen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +561,7 @@
 				7DEB553015D453F300699925 /* MACanvas.m in Sources */,
 				7DEB554215D45A4F00699925 /* MAObject.m in Sources */,
 				7DEB554E15D4612500699925 /* MAObjectManager.m in Sources */,
+				7DD25BDD16B7585800570BD3 /* MAInfoScreen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,7 +620,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -580,7 +644,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -601,12 +665,19 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BouncyBalls/BouncyBalls-Prefix.pch";
 				INFOPLIST_FILE = "BouncyBalls/BouncyBalls-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)",
+					"\"$(SRCROOT)/BouncyBalls/Flurry\"",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/ex-etkmncgonsfdmhefltzgrutkqfsn/Build/Products/Debug-iphonesimulator\"",
+					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/Ensighten-abesmotqcpixfrhivkphsmnchrbp/Build/Products\"",
 				);
-				OTHER_LDFLAGS = "-v";
+				OTHER_LDFLAGS = (
+					"-v",
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "$(CONTENTS_FOLDER_PATH)/**";
 				WRAPPER_EXTENSION = app;
@@ -626,12 +697,19 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BouncyBalls/BouncyBalls-Prefix.pch";
 				INFOPLIST_FILE = "BouncyBalls/BouncyBalls-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)",
+					"\"$(SRCROOT)/BouncyBalls/Flurry\"",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/ex-etkmncgonsfdmhefltzgrutkqfsn/Build/Products/Debug-iphonesimulator\"",
+					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/Ensighten-abesmotqcpixfrhivkphsmnchrbp/Build/Products\"",
 				);
-				OTHER_LDFLAGS = "-v";
+				OTHER_LDFLAGS = (
+					"-v",
+					"-all_load",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "$(CONTENTS_FOLDER_PATH)/**";
 				WRAPPER_EXTENSION = app;
@@ -649,6 +727,15 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BouncyBalls/BouncyBalls-Prefix.pch";
 				INFOPLIST_FILE = "BouncyBallsTests/BouncyBallsTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Downloads/Flurry iPhone SDK v4.1.0/Flurry\"",
+					"\"$(SRCROOT)/BouncyBalls/Flurry\"",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/Ensighten-abesmotqcpixfrhivkphsmnchrbp/Build/Products\"",
+					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/ex-etkmncgonsfdmhefltzgrutkqfsn/Build/Products/Debug-iphoneos\"",
+					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/ex-etkmncgonsfdmhefltzgrutkqfsn/Build/Products/Debug-iphonesimulator\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -666,6 +753,15 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BouncyBalls/BouncyBalls-Prefix.pch";
 				INFOPLIST_FILE = "BouncyBallsTests/BouncyBallsTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../Downloads/Flurry iPhone SDK v4.1.0/Flurry\"",
+					"\"$(SRCROOT)/BouncyBalls/Flurry\"",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/Ensighten-abesmotqcpixfrhivkphsmnchrbp/Build/Products\"",
+					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/ex-etkmncgonsfdmhefltzgrutkqfsn/Build/Products/Debug-iphoneos\"",
+					"\"$(SRCROOT)/../../../Library/Developer/Xcode/DerivedData/ex-etkmncgonsfdmhefltzgrutkqfsn/Build/Products/Debug-iphonesimulator\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;

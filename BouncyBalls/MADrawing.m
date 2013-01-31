@@ -173,8 +173,8 @@ static MADrawing *controlPoint = nil;
     for (MAObject *object in [MAObjectManager objectStore]) {
         
 #if defined(GRAVITY_ENABLED) && GRAVITY_ENABLED
-        MAVector newVelocity = { object.velocity.x + gravity.x * self.framerate,
-                                object.velocity.y + gravity.y * self.framerate };
+        MAVector newVelocity = { object.velocity.x + gravity.x,// * self.framerate,
+                                    object.velocity.y + gravity.y};// * self.framerate };
         object.velocity = newVelocity;
 #endif
         

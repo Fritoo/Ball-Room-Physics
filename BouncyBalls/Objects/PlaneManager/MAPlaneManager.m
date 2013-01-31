@@ -50,10 +50,10 @@ MAPlaneManager *planeManager = nil;
         // { xDirection, yDirection, distanceToOrigin }
         
         (MAVector3){  1,  0, 1},                        // Right vector
-        (MAVector3){ -1,  0, 1*meter },                 // Left vect
+        (MAVector3){ -1,  0, 1},//*meter },                 // Left vect
         
-        (MAVector3){  0, -1, (1*meter)*screenRatio },   // Up vect
-        (MAVector3){  0,  1, 1 }                        // Down vect
+        (MAVector3){  0, -1, 1},//(1*meter)*screenRatio },   // Up vect
+        (MAVector3){  0,  1, 1}                        // Down vect
         
     };
         

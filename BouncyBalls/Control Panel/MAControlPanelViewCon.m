@@ -150,7 +150,7 @@
     
     LogDebug(@"***mark***");
 
-    [MAObjectManager createVelocityBurst];
+//    [MAObjectManager createVelocityBurst];
     
 }
 

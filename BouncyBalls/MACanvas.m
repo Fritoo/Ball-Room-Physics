@@ -113,4 +113,12 @@ static MACanvas *canvas = nil;
 }
 
 
+#pragma mark - Touches
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    [[MAObjectManager objectManager] burst];
+    
+}
+
+
 @end

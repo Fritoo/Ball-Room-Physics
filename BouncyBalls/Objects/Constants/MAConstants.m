@@ -8,6 +8,7 @@
 
 #import "MAConstants.h"
 #import "MAUtils.h"
+#import "MAInfoScreen.h"
 
 int meter = 0;
 float screenRatio = 0;
@@ -71,6 +72,9 @@ int usingRealGravity;
     [motionManager startDeviceMotionUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMDeviceMotion *motion, NSError *e) {
         
         gravity = [MAConstants realGravity];
+        gravity = divideVectorByVector(gravity, (MAVector){ meter/2, meter/2 });
+        [[MAInfoScreen infoScreen] updateDisplay:MAVectorString(&gravity)];
+
         
     }];
     
@@ -96,11 +100,13 @@ int usingRealGravity;
     
     CMAcceleration grav = [[motionManager deviceMotion] gravity];
     MAVector result = (MAVector) { grav.x, grav.y * -1 };
-//    result = multiplyVectors(result, -1);
-    result = divideVectors(result, meter);
-    result = multiplyVectors(result, 0.01);
 
+//    result = multiplyVectors(result, -1);
+//    result = divideVectors(result, meter);
+//    result = multiplyVectors(result, 0.01);
 //    MALog(@"gravity update: %f, %f", result.x, result.y);
+
+    
     return result;
 }
 

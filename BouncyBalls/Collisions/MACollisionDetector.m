@@ -19,10 +19,17 @@
 
 + (void)checkPlaneCollisions: (MAObject *)object {
     
+    [MACollisionDetector viaCollision:object];
+    return;
+    
     for ( MAPlane *plane in [MAPlaneManager planeStore] ) {
         
-        MAVector vect2 = {plane.plane.x, plane.plane.y};
-
+        
+//        MAVector vect2 = {plane.plane.x+meter*0.5+meter*0.5, plane.plane.y+(meter*screenRatio)*0.5+(meter*screenRatio)*0.5};
+        MAVector3 v1 = unitVector(plane.plane);
+        
+        
+        
         double normal = dot1(vect2,  object.center );
         
         float distance = normal + plane.plane.z;
@@ -48,7 +55,41 @@
     
 }
 
++ (void)viaCollision:(MAObject *)object {
+    
+    
+    for ( MAPlane *plane in [MAPlaneManager planeStore] ) {
+        
+        MAVector vect2 = [plane screenSpace];
+        
+        float distance = object.center.x*vect2.x +
+                        object.center.y*vect2.y +
+                        plane.plane.z;
+        
+        CGPoint c = object.center;
+        MALog(@"%@ %@", MAVectorString(&vect2), MAVectorString(&c));
 
+        
+        if ( distance < 0) {
+            // collision response
+            // R = V - (1+COR)*N*(V⋅N)
+            
+            // Calculate dot product
+            float dotResult = dot(vect2, object.velocity);
+            
+            // 2*N
+            MAVector resultA = multiplyVectors(vect2, (1+object.COR));
+            
+            // ...*dotResult
+            MAVector resultB = multiplyVectors(resultA, dotResult);
+            
+            // object.velocity -=
+            object.velocity = subtractVectorByVector(object.velocity, resultB);
+
+        }
+
+    }
+}
 
 
 

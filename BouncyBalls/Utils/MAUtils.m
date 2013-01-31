@@ -27,6 +27,18 @@ void MALog(NSString *format,...) {
 }
 
 
+NSString *MAVectorString ( void *ptr ) {
+    
+    if ( NULL == ptr ) {
+        return nil;
+    }
+    
+    MAVector vect = *(MAVector*)ptr;
+    
+    
+    return [NSString stringWithFormat:@"(%0.3f, %0.3f)", vect.x, vect.y];
+}
+
 CGPoint MAGetCenter (CGRect rect) {
     
     float halfWidth = rect.size.width / 2;
@@ -112,6 +124,38 @@ double dot1 ( MAVector a, CGPoint b ) {
     return dot(a, (MAVector){b.x, b.y});
         
 }
+
+double magnitude (MAVector3 a) {
+    
+    float X = pow(a.x, 2);
+    float Y = pow(a.y, 2);
+    float Z = pow(a.z, 2);
+
+    double sqRoot = quickSqrt(X+Y+Z);
+    
+    return sqRoot;
+}
+
+MAVector MAVectorMake ( float X, float Y) {
+    return (MAVector){X,Y};
+}
+MAVector3 MAVector3Make ( float X, float Y, float Z) {
+    return (MAVector3){X,Y,Z};
+}
+
+
+
+MAVector3 unitVector (MAVector3 a) {
+    
+    double mag = magnitude(a);
+    float X = a.x/mag;
+    float Y = a.y/mag;
+    float Z = a.z/mag;
+    
+    return MAVector3Make(X,Y,Z);
+    
+}
+
 
 
 float quickSqrt( float number )

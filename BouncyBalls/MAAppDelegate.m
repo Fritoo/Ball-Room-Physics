@@ -10,6 +10,8 @@
 
 #import "MADrawing.h"
 #import "MAStaticRootViewCon.h"
+#import "Flurry.h"
+#import "MAInfoScreen.h"
 
 @implementation MAAppDelegate
 
@@ -19,14 +21,23 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    [Flurry startSession:@"VD4PYH6Q2CD36T24XG8M"];
+    [Flurry setDebugLogEnabled:YES];
+    //VD4PYH6Q2CD36T24XG8M
+    
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
     // Override point for customization after application launch.
     
     self.window.rootViewController = [[MAStaticRootViewCon alloc] init];
     self.window.rootViewController.view.backgroundColor = [UIColor clearColor];
-
+        
     [self.window makeKeyAndVisible];
+    
+    [self.window.rootViewController.view addSubview:[MAInfoScreen infoScreen]];
+
     
     [MADrawing launch];
     
@@ -60,6 +71,11 @@
     // Saves changes in the application's managed object context before the application terminates.
     [self saveContext];
 }
+
+- (NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window{
+    return 0;
+}
+
 
 - (void)saveContext
 {

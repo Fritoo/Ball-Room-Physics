@@ -15,11 +15,14 @@
 @property MAVector3 plane;
 @property int tag;
 
+
 - (NSString *)stringFromPlane;
 - (NSString *)stringFromRaw;
 - (CGRect)rectFromPlane;
 - (MALine)lineFromPlane;
 - (double)angleBetween:(MAVector)v2;
 - (double)angleToScreenCenter;
+- (MAVector)screenSpace;
+
 
 @end

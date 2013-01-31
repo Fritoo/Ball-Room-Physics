@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Structs.h"
-
+#import "MAPlane.h"
 
 #define LOG_THIS(fmt, lvl, ...) MALog((@"%s[Line %d] [%@] " fmt), __PRETTY_FUNCTION__, __LINE__, lvl, ##__VA_ARGS__)
 #define LogDebug(fmt, ...) LOG_THIS(fmt, @"Debug", ##__VA_ARGS__)
@@ -43,7 +43,13 @@ CGPoint MARectGetCenter (CGRect rect);
 double distanceToPoint (CGPoint pointA, CGPoint pointB);
 double distanceToPoint1 (MAVector pointA, MAVector pointB);
 
+double magnitude (MAVector3 a);
+MAVector3 unitVector (MAVector3 a);
+MAVector MAVectorMake ( float X, float Y);
 
+
+
+NSString *MAVectorString ( void *ptr );
 void MALog(NSString *format, ...);
 
 

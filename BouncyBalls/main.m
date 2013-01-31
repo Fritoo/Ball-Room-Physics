@@ -7,13 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-
+//#import "Ensighten.h"
 #import "MAAppDelegate.h"
 
 int main(int argc, char *argv[])
 {
         
     @autoreleasepool {
+        
+//        [Ensighten bootstrapForClient:@"ensighten" andApp:@"alerts"];
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([MAAppDelegate class]));
     }
 }

@@ -66,6 +66,8 @@
 
 
 
+
+
 - (void)updatePathLocation {
         
     [self setPathForShape];
@@ -111,6 +113,11 @@
     }
     
     self.velocity = [self generateRandomVelocity];
+    
+}
+
+- (void)setDefaultVector {
+    
     
 }
 

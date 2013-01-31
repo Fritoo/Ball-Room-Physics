@@ -16,5 +16,7 @@
 - (void)buildObjects;
 + (NSMutableArray *)objectStore;
 + (void)createVelocityBurst;
+- (void)burst;
+
 
 @end

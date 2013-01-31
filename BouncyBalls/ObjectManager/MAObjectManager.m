@@ -11,7 +11,7 @@
 #import "MAConstants.h"
 #import "MAUtils.h"
 #import "MADrawing.h"
-
+#import "Flurry.h"
 
 MAObjectManager *objectManager = nil;
 
@@ -22,9 +22,10 @@ MAObjectManager *objectManager = nil;
     
     if ( objectManager == nil ) {
         objectManager = [[MAObjectManager alloc] init];
+        [objectManager launchObjectManager];
+
     }
     
-    [objectManager launchObjectManager];
     
     return objectManager;
 }
@@ -56,8 +57,15 @@ MAObjectManager *objectManager = nil;
     return objectManager.objectStore;
 }
 
+- (void)burst {
+    
+    [MAObjectManager createVelocityBurst];
+    
+}
+
 
 + (void)createVelocityBurst {
+//    [Flurry logEvent:[NSString stringWithFormat:@"%@", NSStringFromSelector(_cmd)]];
     
     for ( MAObject *object in [MAObjectManager objectStore] ) {
         

@@ -37,7 +37,14 @@
     
 }
 
-
+- (MAVector)screenSpace {
+    
+    float X = self.plane.x*meter*0.5 + meter*0.5;
+    float Y = self.plane.y*meter*screenRatio*0.5 + meter*screenRatio*0.5;
+     
+    return (MAVector){ X,Y };
+    
+}
 
 - (CGRect)rectFromPlane {
     
