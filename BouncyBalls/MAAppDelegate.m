@@ -12,6 +12,7 @@
 #import "MAStaticRootViewCon.h"
 #import "Flurry.h"
 #import "MAInfoScreen.h"
+#import "EXCategories.h"
 
 @implementation MAAppDelegate
 
@@ -40,6 +41,12 @@
 
     
     [MADrawing launch];
+    
+//    EXTimer *timer = [EXTimer new];
+//    [timer startTimer];
+//    [EXExaminer clientClassList];
+//    [timer stopTimer];
+//    NSLog(@"time: %lf", [timer timeElapsedInSeconds]);
     
     return YES;
 }

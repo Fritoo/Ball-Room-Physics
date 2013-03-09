@@ -25,7 +25,7 @@
     for ( MAPlane *plane in [MAPlaneManager planeStore] ) {
         
         
-//        MAVector vect2 = {plane.plane.x+meter*0.5+meter*0.5, plane.plane.y+(meter*screenRatio)*0.5+(meter*screenRatio)*0.5};
+        MAVector vect2 = {plane.plane.x+meter*0.5+meter*0.5, plane.plane.y+(meter*screenRatio)*0.5+(meter*screenRatio)*0.5};
         MAVector3 v1 = unitVector(plane.plane);
         
         
